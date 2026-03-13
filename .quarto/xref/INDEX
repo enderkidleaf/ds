@@ -265,5 +265,14 @@
   },
   "body/06.00-Figure-Code.ipynb": {
     "06.00-Figure-Code.html": "cd77b9f0"
+  },
+  "body/crawing/craw_01_introduction.md": {
+    "craw_01_introduction.html": "544cba3d"
+  },
+  "body/crawing/craw_02_sec01_lingnan_prompt.md": {
+    "craw_02_sec01_lingnan_prompt.html": "9a6b7789"
+  },
+  "body/crawing/craw_02_sec02_lingnan_dialog.ipynb": {
+    "craw_02_sec02_lingnan_dialog.html": "e45db036"
   }
 }

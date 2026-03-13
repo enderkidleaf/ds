@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; 数据获取和读入 – 数据分析</title>
+<title>8&nbsp; 数据获取和读入 – 数据分析</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,9 +21,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,19 +64,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/data_01_readdata.html" rel="next">
-<link href="../body/03_py_05_class.html" rel="prev">
+<link href="../body/data_02_data_type.html" rel="next">
+<link href="../body/01_04_markdown.html" rel="prev">
 <link href="../images/ds-book-logo-40.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fe91322616dd2b9cea8bc6bfc6aa44e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7bb155a724e1e2e76a6aa2808839ad2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8434d2026ae8291579158df2ad8dfa64.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -113,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -122,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><strong>数据分析</strong></a></li><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">数据获取和读入</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><strong>数据分析</strong></a></li><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">数据获取和读入</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../body/01_01_install_anaconda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">软件安装和环境配置</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python：安装和环境配置</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -208,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../body/01_04_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">何谓 Markdown？</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Python 基础</strong></span></a>
+ <span class="menu-text"><strong>数据分析</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,74 +222,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Python 入门</span></span></a>
+  <a href="../body/data_01_get_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">数据获取和读入</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_01_grammer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python 代码风格</span></span></a>
+  <a href="../body/data_02_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">数据分析是什么？</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_02_QuickReference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Python 常用命令速查表</span></span></a>
+  <a href="../body/data_02_get_data_GMD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">获取数据：GMD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Python 常用扩展包</span></span></a>
+  <a href="../body/TS_SZ_index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">上证指数的时序特征</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_04_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Python：import 使用详解</span></span></a>
+  <a href="../body/web_01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据爬虫入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_05_OOP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Python：语法解析-面向对象编程</span></span></a>
+  <a href="../body/crawing/craw_01_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">网络爬虫简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_06_filepath.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Python 路径设置</span></span></a>
+  <a href="../body/crawing/craw_02_sec01_lingnan_prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">爬虫实例 1：岭南学院教师名录整理</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/03_py_01_numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">NumPy</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_02_pandas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">pandas 快速入门</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_03_matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Matplotlib简介</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_04_function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">函数</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_05_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">类和对象</span></span></a>
+  <a href="../body/crawing/craw_02_sec02_lingnan_dialog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">爬虫实例 1：岭南学院教师名录整理</span></span></a>
   </div>
 </li>
       </ul>
@@ -299,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>数据分析</strong></span></a>
+ <span class="menu-text"><strong>可视化</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -307,38 +281,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_01_get_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">数据获取和读入</span></span></a>
+  <a href="../body/graph_01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Python 可视化：简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_01_readdata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">读取数据</span></span></a>
+  <a href="../body/graph_dis_box_violin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">箱型图和小提琴图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_02_data_type.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">数据分析是什么？</span></span></a>
+  <a href="../body/graph_dis_histogram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">直方图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_02_get_data_GMD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">获取数据：GMD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/TS_SZ_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">上证指数的时序特征</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/web_01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">数据爬虫入门</span></span></a>
+  <a href="../body/graph_dis_kdensity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">核密度函数图</span></span></a>
   </div>
 </li>
       </ul>
@@ -346,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>可视化</strong></span></a>
+ <span class="menu-text"><strong>线性回归</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -354,26 +316,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Python 可视化：简介</span></span></a>
+  <a href="../body/regress_01_OLS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">线性回归模型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_box_violin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">箱型图和小提琴图</span></span></a>
+  <a href="../body/regress_02_wage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_histogram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">直方图</span></span></a>
+  <a href="../body/regress_03_binscatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">分仓散点图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_kdensity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">核密度函数图</span></span></a>
+  <a href="../body/regress_04_wage_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
   </div>
 </li>
       </ul>
@@ -381,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>线性回归</strong></span></a>
+ <span class="menu-text"><strong>时间序列</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -389,26 +351,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_01_OLS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">线性回归模型</span></span></a>
+  <a href="../body/TS_asset_return.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">资产收益率（Asset Returns）</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_02_wage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
+  <a href="../body/TS_man_weight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">时序建模思路：模拟体重变化</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_03_binscatter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">分仓散点图</span></span></a>
+  <a href="../body/TS_ARMA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">ARMA 模型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_04_wage_prediction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
+  <a href="../body/TS_FRED_US_unemploy_rate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">案例：美国失业率和通胀率关系分析</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/TS_GARCH_BYD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">GARCH 模型</span></span></a>
   </div>
 </li>
       </ul>
@@ -416,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>时间序列</strong></span></a>
+ <span class="menu-text"><strong>机器学习</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -424,32 +392,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_asset_return.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">资产收益率（Asset Returns）</span></span></a>
+  <a href="../body/test_AB_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">A/B test-分组对照试验</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_man_weight.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">时序建模思路：模拟体重变化</span></span></a>
+  <a href="../body/ML-Naive-Bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">In Depth: Naive Bayes Classification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_ARMA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">ARMA 模型</span></span></a>
+  <a href="../body/ML-Random-Forests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">深入理解：决策树与随机森林</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_FRED_US_unemploy_rate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">案例：美国失业率和通胀率关系分析</span></span></a>
+  <a href="../body/ML-baggboost-lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Tree-Based Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_GARCH_BYD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">GARCH 模型</span></span></a>
+  <a href="../body/ML-Support-Vector-Machines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">支持向量机 (Support Vector Machines)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/ML-svm-lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Support Vector Machines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/06.00-Figure-Code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Appendix: Figure Code</span></span></a>
   </div>
 </li>
       </ul>
@@ -457,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>机器学习</strong></span></a>
+ <span class="menu-text"><strong>Python 基础</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -465,115 +445,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/test_AB_test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">A/B test-分组对照试验</span></span></a>
+  <a href="../body/02_py_00_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Python 入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Naive-Bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In Depth: Naive Bayes Classification</span></span></a>
+  <a href="../body/02_py_01_grammer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Python 代码风格</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Random-Forests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">深入理解：决策树与随机森林</span></span></a>
+  <a href="../body/02_py_02_QuickReference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Python 常用命令速查表</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-baggboost-lab.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Tree-Based Methods</span></span></a>
+  <a href="../body/02_py_03_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Python 常用扩展包</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Support-Vector-Machines.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">支持向量机 (Support Vector Machines)</span></span></a>
+  <a href="../body/02_py_04_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Python：import 使用详解</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-svm-lab.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Support Vector Machines</span></span></a>
+  <a href="../body/02_py_05_OOP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Python：语法解析-面向对象编程</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/06.00-Figure-Code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Appendix: Figure Code</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>作业展示</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Dangdang_G7_01_data_clean.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">当当网-G7-01</span></span></a>
+  <a href="../body/02_py_06_filepath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Python 路径设置</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Dangdang_G7_02_data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">当当网-G7-02</span></span></a>
+  <a href="../body/03_py_01_numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">NumPy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/G8_China_stock_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">G8-中国上市公司</span></span></a>
+  <a href="../body/03_py_02_pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">pandas 快速入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_01_data_crawler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">G4-01</span></span></a>
+  <a href="../body/03_py_03_matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Matplotlib简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_02_data_cleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">G4-02</span></span></a>
+  <a href="../body/03_py_04_function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">函数</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_03_data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">G4-03</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_万诗晴.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">ex02_万诗晴</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_吴倩茵.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">ex02_吴倩茵</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_朱少荣.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">ex02_朱少荣</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_黄伊姿.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">ex02_黄伊姿</span></span></a>
+  <a href="../body/03_py_05_class.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">类和对象</span></span></a>
   </div>
 </li>
       </ul>
@@ -588,29 +527,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#数据来源" id="toc-数据来源" class="nav-link active" data-scroll-target="#数据来源"><span class="header-section-number">20.1</span> 数据来源</a></li>
-  <li><a href="#读取数据" id="toc-读取数据" class="nav-link" data-scroll-target="#读取数据"><span class="header-section-number">21</span> 读取数据</a>
+  <li><a href="#数据来源" id="toc-数据来源" class="nav-link active" data-scroll-target="#数据来源"><span class="header-section-number">8.1</span> 数据来源</a>
   <ul class="collapse">
-  <li><a href="#读取-excel-文件" id="toc-读取-excel-文件" class="nav-link" data-scroll-target="#读取-excel-文件"><span class="header-section-number">21.1</span> 读取 Excel 文件</a></li>
-  <li><a href="#读取-csv-文件" id="toc-读取-csv-文件" class="nav-link" data-scroll-target="#读取-csv-文件"><span class="header-section-number">21.2</span> 读取 CSV 文件</a></li>
-  <li><a href="#读取-r-文件" id="toc-读取-r-文件" class="nav-link" data-scroll-target="#读取-r-文件"><span class="header-section-number">21.3</span> 读取 R 文件</a></li>
-  <li><a href="#世界银行数据" id="toc-世界银行数据" class="nav-link" data-scroll-target="#世界银行数据"><span class="header-section-number">21.4</span> 世界银行数据</a></li>
-  <li><a href="#读取数据-1" id="toc-读取数据-1" class="nav-link" data-scroll-target="#读取数据-1"><span class="header-section-number">21.5</span> 读取数据</a>
+  <li><a href="#数据科学平台和搜索引擎" id="toc-数据科学平台和搜索引擎" class="nav-link" data-scroll-target="#数据科学平台和搜索引擎"><span class="header-section-number">8.1.1</span> 数据科学平台和搜索引擎</a></li>
+  <li><a href="#国内数据平台" id="toc-国内数据平台" class="nav-link" data-scroll-target="#国内数据平台"><span class="header-section-number">8.1.2</span> 国内数据平台</a></li>
+  <li><a href="#学校图书馆" id="toc-学校图书馆" class="nav-link" data-scroll-target="#学校图书馆"><span class="header-section-number">8.1.3</span> 学校图书馆</a></li>
+  <li><a href="#公开数据" id="toc-公开数据" class="nav-link" data-scroll-target="#公开数据"><span class="header-section-number">8.1.4</span> 公开数据</a></li>
+  <li><a href="#相关推文" id="toc-相关推文" class="nav-link" data-scroll-target="#相关推文"><span class="header-section-number">8.1.5</span> 相关推文</a></li>
+  </ul></li>
+  <li><a href="#读取数据" id="toc-读取数据" class="nav-link" data-scroll-target="#读取数据"><span class="header-section-number">8.2</span> 读取数据</a>
   <ul class="collapse">
-  <li><a href="#列表和数据框" id="toc-列表和数据框" class="nav-link" data-scroll-target="#列表和数据框"><span class="header-section-number">21.5.1</span> 列表和数据框</a></li>
-  <li><a href="#读取-csv-文件-1" id="toc-读取-csv-文件-1" class="nav-link" data-scroll-target="#读取-csv-文件-1"><span class="header-section-number">21.5.2</span> 读取 CSV 文件</a></li>
-  <li><a href="#xlsx-还是-.csv" id="toc-xlsx-还是-.csv" class="nav-link" data-scroll-target="#xlsx-还是-.csv"><span class="header-section-number">21.5.3</span> .xlsx 还是 .csv？</a></li>
+  <li><a href="#列表和数据框" id="toc-列表和数据框" class="nav-link" data-scroll-target="#列表和数据框"><span class="header-section-number">8.2.1</span> 列表和数据框</a></li>
+  <li><a href="#读取-csv-文件" id="toc-读取-csv-文件" class="nav-link" data-scroll-target="#读取-csv-文件"><span class="header-section-number">8.2.2</span> 读取 CSV 文件</a></li>
+  <li><a href="#xlsx-还是-.csv" id="toc-xlsx-还是-.csv" class="nav-link" data-scroll-target="#xlsx-还是-.csv"><span class="header-section-number">8.2.3</span> .xlsx 还是 .csv？</a></li>
   </ul></li>
+  <li><a href="#读取格式化数据" id="toc-读取格式化数据" class="nav-link" data-scroll-target="#读取格式化数据"><span class="header-section-number">8.3</span> 读取格式化数据</a>
+  <ul class="collapse">
+  <li><a href="#读取-excel-文件" id="toc-读取-excel-文件" class="nav-link" data-scroll-target="#读取-excel-文件">读取 Excel 文件</a></li>
+  <li><a href="#读取-csv-文件-1" id="toc-读取-csv-文件-1" class="nav-link" data-scroll-target="#读取-csv-文件-1">读取 CSV 文件</a></li>
   </ul></li>
+  <li><a href="#在线读取数据" id="toc-在线读取数据" class="nav-link" data-scroll-target="#在线读取数据"><span class="header-section-number">8.4</span> 在线读取数据</a>
+  <ul class="collapse">
+  <li><a href="#在线读取-.dta-文件时的一个常见问题" id="toc-在线读取-.dta-文件时的一个常见问题" class="nav-link" data-scroll-target="#在线读取-.dta-文件时的一个常见问题"><span class="header-section-number">8.4.1</span> 在线读取 <code>.dta</code> 文件时的一个常见问题</a></li>
+  </ul></li>
+  <li><a href="#世界银行数据" id="toc-世界银行数据" class="nav-link" data-scroll-target="#世界银行数据"><span class="header-section-number">8.5</span> 世界银行数据</a></li>
+  <li><a href="#通过-api-获取数据" id="toc-通过-api-获取数据" class="nav-link" data-scroll-target="#通过-api-获取数据"><span class="header-section-number">8.6</span> 通过 API 获取数据</a></li>
+  <li><a href="#csmar-数据库" id="toc-csmar-数据库" class="nav-link" data-scroll-target="#csmar-数据库"><span class="header-section-number">8.7</span> CSMAR 数据库</a></li>
+  <li><a href="#网页爬取" id="toc-网页爬取" class="nav-link" data-scroll-target="#网页爬取"><span class="header-section-number">8.8</span> 网页爬取</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><strong>数据分析</strong></a></li><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">数据获取和读入</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><strong>数据分析</strong></a></li><li class="breadcrumb-item"><a href="../body/data_01_get_data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">数据获取和读入</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">数据获取和读入</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">数据获取和读入</span></h1>
 </div>
 
 
@@ -627,12 +579,206 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="数据来源" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="数据来源"><span class="header-section-number">20.1</span> 数据来源</h2>
-<p>参见 <a href="../body/00_intro.html">课程简介和资源</a>。</p>
+<section id="数据来源" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="数据来源"><span class="header-section-number">8.1</span> 数据来源</h2>
+<section id="数据科学平台和搜索引擎" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="数据科学平台和搜索引擎"><span class="header-section-number">8.1.1</span> 数据科学平台和搜索引擎</h3>
+<ul>
+<li><a href="https://www.kdnuggets.com/datasets/index.html">KDNuggets - datasets</a>
+<ul>
+<li>数据科学和机器学习领域的知名网站，提供了大量的资源和信息。</li>
+</ul></li>
+<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a>
+<ul>
+<li>全球知名的数据科学与机器学习社区，用户可以在平台上获取数据集、参与竞赛、分享与学习代码、交流讨论。</li>
+</ul></li>
+<li><a href="https://data.mendeley.com/">Mendeley Data</a>
+<ul>
+<li>一个开放的数据集存储库，用户可以上传和分享数据集。诸多学术期刊的作者在此分享他们的数据集。</li>
+</ul></li>
+<li><a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>
+<ul>
+<li>机器学习领域最经典的数据集仓库，涵盖分类、回归、聚类等多种任务，适合教学和算法测试。</li>
+</ul></li>
+<li><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a>
+<ul>
+<li>谷歌推出的专用数据集搜索引擎，聚合全球各类开放数据集，支持多语言检索，便于快速定位所需数据。</li>
+</ul></li>
+<li><a href="https://registry.opendata.aws/">AWS Public Datasets</a>
+<ul>
+<li>亚马逊云平台提供的开放数据集，涵盖气象、基因组、卫星影像等大规模数据，适合云端分析和机器学习。</li>
+</ul></li>
+<li><a href="https://azure.microsoft.com/en-us/services/open-datasets/">Microsoft Azure Open Datasets</a>
+<ul>
+<li>微软云平台提供的开放数据集，聚焦天气、健康、金融等领域，便于在 Azure 上直接调用和分析。</li>
+</ul></li>
+<li><a href="https://data.europa.eu/en">Open Data Portal by European Union</a>
+<ul>
+<li>欧盟官方开放数据门户，收录成员国及欧盟机构的各类统计、经济、社会等数据，支持多语种访问。</li>
+</ul></li>
+<li><a href="https://data.worldbank.org/">World Bank Open Data</a>
+<ul>
+<li>世界银行开放数据平台，提供全球各国经济、社会、发展等宏观数据，适合国际比较和经济研究。</li>
+</ul></li>
+<li><a href="https://www.data.gov/">Data.gov</a>
+<ul>
+<li>美国政府开放数据平台，涵盖农业、气候、教育、能源等众多领域，数据权威且更新及时。</li>
+</ul></li>
+<li><a href="https://github.com/awesomedata/awesome-public-datasets">awesome-public-datasets</a>
+<ul>
+<li>GitHub 开放数据集列表</li>
+</ul></li>
+</ul>
 </section>
-<section id="读取数据" class="level1" data-number="21">
-<h1 data-number="21"><span class="header-section-number">21</span> 读取数据</h1>
+<section id="国内数据平台" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="国内数据平台"><span class="header-section-number">8.1.2</span> 国内数据平台</h3>
+<ul>
+<li><a href="https://www.casdc.cn/home">中国科学院科学数据中心</a></li>
+<li><a href="https://www.nesdc.org.cn/about">国家生态科学数据中心</a></li>
+</ul>
+</section>
+<section id="学校图书馆" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="学校图书馆"><span class="header-section-number">8.1.3</span> 学校图书馆</h3>
+<blockquote class="blockquote">
+<p><a href="https://library.sysu.edu.cn/page/3640?title=&amp;eresource_sel2_ref%5B0%5D=133">中大图书馆-统计类数据库</a></p>
+</blockquote>
+<ul>
+<li>CSMAR (国泰安数据库-公司金融-股票-债券):
+<ul>
+<li>🍎 <a href="https://data.csmar.com/" class="uri">https://data.csmar.com/</a></li>
+</ul></li>
+<li>EPS数据平台</li>
+<li><a href="https://library.sysu.edu.cn/eresource/364">Wind资讯金融终端</a></li>
+<li><a href="https://cyk.cei.cn/jsps/Default">中经网产业数据</a>
+<ul>
+<li>登录方式：点击【登陆】按钮下方的【<code>中山大学集団用户快捷入口</code>】(无需账号密码)</li>
+<li>国内宏观层面的数据基本上都能够找到。Excel → Python/Stata</li>
+<li><a href="https://cyk.cei.cn/jsps/Banner?p=7a577a323842682b577237412b6b4b6e44416930556f3875357a4579464a6e56304d3752445359423745784b705547722f6b3563322b2f56755a614d36714d2b516f47584d79446175395874327970706241524e4730375662586264683577343752714c647562354133735832383158516f4434576154556164693332666f2b6b7677454f4759514c4c42584e4f6f4b553473757251533471354969715238653457567a6c354b42732f393076753773376b61305635694d544e3279426e4e6375534447497942782f7a4f4875416e5952647a346a6f685444457269776231344b486c584e4e6339535072554a3745526543316f4e6c4f766331624a65455650674e395a484c344d3142636f542f4f44724d6265564e696e5a413136684b62766959585a6b49505431646e52577938413267544151482f73713647576456667843373452747166563664566a7671664e707874616e37595855486255374765454241723045564c436274773d">例：宏观数据</a></li>
+</ul></li>
+<li><a href="https://library.sysu.edu.cn/eresource/771">中经网统计数据库</a></li>
+<li><a href="https://library.sysu.edu.cn/eresource/769">EMIS—Emerging Markets Information Service（新兴市场动态及商务信息数据库）</a>
+<ul>
+<li>新闻，股指，最新统计数据等</li>
+<li><a href="https://www.emis.cn/v2/countries/profile/CN/financial-markets/">China - Financial markest</a></li>
+</ul></li>
+</ul>
+<p><strong>RESSET系列数据库</strong></p>
+<ul>
+<li><a href="https://library.sysu.edu.cn/eresource/1540">RESSET系列数据库</a> | <a href="https://library.sysu.edu.cn/eresource/1541">RESSET企业大数据平台</a>
+<ul>
+<li>需要输入账号和密码</li>
+<li>1、中山大学校园网IP范围内，直接点击访问。</li>
+<li>2、官方网站访问： http://www.resset.cn，点击页面“快速登录”右边的“企业大数据平台”链接后输入对应的用户名及密码进行登录。用户名：sysu和密码：sysu1903。</li>
+<li>3、校外不限IP访问，通过CARSI平台访问登陆，访问地址：http://db.resset.com/，点击页面的：CARIS 平台登陆，选择学校，然后输入验证身份信息后登陆使用。</li>
+</ul></li>
+</ul>
+</section>
+<section id="公开数据" class="level3" data-number="8.1.4">
+<h3 data-number="8.1.4" class="anchored" data-anchor-id="公开数据"><span class="header-section-number">8.1.4</span> 公开数据</h3>
+<ul>
+<li><strong>全球数据</strong>
+<ul>
+<li>连小白, 2025, <a href="https://www.lianxh.cn/details/1559.html">GMD：最新全球宏观数据库-243个国家46个宏观变量</a>, 连享会 No.1559.
+<ul>
+<li><a href="https://www.globalmacrodata.com/data.html">GMD 主页</a></li>
+</ul></li>
+</ul></li>
+<li>各国、各级政府的统计局：
+<ul>
+<li><a href="https://www.census.gov/data.html">美国人口调查局</a></li>
+<li><a href="http://www.stats.gov.cn/">中国国家统计局</a></li>
+<li><a href="http://www.csrc.gov.cn/">中国证监会</a></li>
+<li><a href="http://www.pbc.gov.cn/">中国人民银行</a></li>
+</ul></li>
+<li>国际国内各类组织机构
+<ul>
+<li><a href="https://www.shihang.org/zh/home">世界银行</a></li>
+<li><a href="https://www.cdc.gov/">美国疾病预防控制中心</a></li>
+<li><a href="https://www.imf.org/en/Data">国际货币基金组织</a></li>
+<li><a href="https://fred.stlouisfed.org/">美国联邦储备银行</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="相关推文" class="level3" data-number="8.1.5">
+<h3 data-number="8.1.5" class="anchored" data-anchor-id="相关推文"><span class="header-section-number">8.1.5</span> 相关推文</h3>
+<ul>
+<li>冷萱, 2021, <a href="https://www.lianxh.cn/details/645.html">清洗CFPS：两步搞定中国家庭追踪调查数据清洗</a>.</li>
+<li>吕卓阳, 2025, <a href="https://www.lianxh.cn/details/1696.html">FinanceDatabase：涵盖30万条全球金融数据的平台</a>.</li>
+<li>吴浩然, 2024, <a href="https://www.lianxh.cn/details/1329.html">数据爬取：美国证监会EDGAR系统数据获取及Python实现</a>.</li>
+<li>周豪波, 2020, <a href="https://www.lianxh.cn/details/20.html">Python 调用 API 爬取百度 POI 数据小贴士——坐标转换、数据清洗与 ArcGIS 可视化</a>.</li>
+<li>宋森安, 2022, <a href="https://www.lianxh.cn/details/918.html">CHARLS-中国健康与养老调查数据库清洗（二）</a>.</li>
+<li>张祖冲, 2025, <a href="https://www.lianxh.cn/details/1642.html">akshare 与 Python：中国金融数据分析与获取的开源首选工具</a>.</li>
+<li>李珊珊, 2023, <a href="https://www.lianxh.cn/details/1212.html">CGSS：中国综合社会调查数据清洗</a>.</li>
+<li>李珊珊, 2023, <a href="https://www.lianxh.cn/details/1222.html">CLHLS：中国老年健康影响因素跟踪调查数据清洗</a>.</li>
+<li>李青塬, 2022, <a href="https://www.lianxh.cn/details/893.html">Stata：如何调用联邦储备经济数据(FRED)-freduse</a>.</li>
+<li>桑倩倩, 2022, <a href="https://www.lianxh.cn/details/929.html">美国社会-人口数据平台-Opportunity-Insights：由Chetty发起</a>.</li>
+<li>申维冰, 2022, <a href="https://www.lianxh.cn/details/958.html">金融数据哪里找——Akshare数据平台</a>.</li>
+<li>申维冰, 2021, <a href="https://www.lianxh.cn/details/676.html">金融数据哪里找：Tushare数据平台</a>.</li>
+<li>罗丹, 2025, <a href="https://www.lianxh.cn/details/1638.html">提示词！提示词！数据清洗、数据分析、可视化一网打尽</a>.</li>
+<li>肖蕊, 2021, <a href="https://www.lianxh.cn/details/813.html">知乎热议：经济-金融大佬从哪里获得数据？如何处理？</a>.</li>
+<li>连享会, 2021, <a href="https://www.lianxh.cn/details/682.html">Stata公开课：微观数据库清理经验分享</a>.</li>
+<li>连享会, 2025, <a href="https://www.lianxh.cn/details/1622.html">连享会-系列公开课（共五次）</a>.</li>
+<li>连享会, 2020, <a href="https://www.lianxh.cn/details/213.html">连享会直播：Stata 数据清洗之实战操作</a>.</li>
+<li>连小白, 2025, <a href="https://www.lianxh.cn/details/1586.html">Kaggle-数据科学平台：找数据、搜代码一网打尽</a>.</li>
+</ul>
+</section>
+</section>
+<section id="读取数据" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="读取数据"><span class="header-section-number">8.2</span> 读取数据</h2>
+<section id="列表和数据框" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="列表和数据框"><span class="header-section-number">8.2.1</span> 列表和数据框</h3>
+<p>Python 提供了多种数据结构来存储和处理数据，其中最常用的是列表（list）和数据框（DataFrame）。列表是一个有序的元素集合，而数据框是一个二维的表格数据结构，类似于电子表格或数据库表。</p>
+<p>如果我们的原始数据是 .csv, xlsx 或 .txt 文件，我们可以使用 pandas 库的 <code>read_csv()</code>、<code>read_excel()</code> 或 <code>read_table()</code> 函数。</p>
+</section>
+<section id="读取-csv-文件" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="读取-csv-文件"><span class="header-section-number">8.2.2</span> 读取 CSV 文件</h3>
+<p>CSV 文件（Comma-Separated Values）是一种常见的文本文件格式，存储的数据通常满足「清洁数据」的要求，即每一行代表一条记录，每一列代表一个字段。</p>
+<p>有些 CSV 文件可能包含标题行（header），即第一行是列名，而有些则没有。我们可以通过 pandas 库的 <code>read_csv()</code> 函数来读取这些文件，并指定是否包含标题行。</p>
+<p>如下是几个典型的 CSV 文件存储结构示例</p>
+<ul>
+<li>结构 1：没有标题行</li>
+<li>结构 2：首行为变量名</li>
+<li>结构 3：首行为变量名，第二行取值单位</li>
+<li>结构 4：首行为变量名，第二行取值单位，第三行为注释</li>
+</ul>
+<p>上述结构可以统一为一种结构，即任何 CSV 文件都可以分为 head （标题行）和 body（数据行）两部分。head 部分包含列名和其他元数据，body 部分包含实际的数据。使用 pandas 库的 <code>read_csv()</code> 函数时，我们可以通过参数来指定是否包含标题行，以及如何处理其他元数据。</p>
+<p><code>read_csv()</code> 函数的常用输入项和设定包括：</p>
+<ul>
+<li><code>filepath_or_buffer</code>：文件路径或对象，指定要读取的 CSV 文件。</li>
+<li><code>sep</code>：分隔符，默认为逗号（<code>,</code>），可以指定其他分隔符，如制表符（<code>\t</code>）。</li>
+<li><code>header</code>：指定标题行的位置，默认为 0（第一行），可以设置为 None 表示没有标题行。<br>
+</li>
+<li><code>names</code>：指定列名列表，如果文件没有标题行，可以通过此参数提供列名。</li>
+<li><code>index_col</code>：指定哪一列作为行索引，默认为 None。</li>
+<li><code>usecols</code>：指定要读取的列，可以是列名列表或列索引列表。</li>
+<li><code>dtype</code>：指定列的数据类型，可以是字典形式，键为列名，值为数据类型。</li>
+<li><code>skiprows</code>：跳过前几行，常用于跳过注释或元数据行。</li>
+<li><code>nrows</code>：指定读取的行数，常用于只读取部分数据。</li>
+<li><code>na_values</code>：指定哪些值应被视为缺失值。</li>
+<li><code>parse_dates</code>：指定哪些列应解析为日期类型。</li>
+<li><code>encoding</code>：指定文件的编码格式，常用的有 ‘utf-8’、‘latin1’ 等。</li>
+<li><code>engine</code>：指定解析引擎，默认为 ‘c’，可以设置为 ‘python’ 以使用 Python 引擎。</li>
+</ul>
+</section>
+<section id="xlsx-还是-.csv" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="xlsx-还是-.csv"><span class="header-section-number">8.2.3</span> .xlsx 还是 .csv？</h3>
+<blockquote class="blockquote">
+<p><a href="https://chatgpt.com/share/6834832e-63f0-8005-b3f8-efe7eecc8b43">ChatGPT</a>，<a href="https://chatgpt.com/share/68348349-9944-8005-abbc-c03b27f613a1">simple-version</a></p>
+</blockquote>
+<p>在数据分析中，经常会遇到 Excel (.xlsx) 和 CSV (.csv) 两种数据文件。实际工作中，如果仅考虑数据处理效率，<strong>.csv 格式比 .xlsx 格式在 Python 中的读入速度快得多</strong>。这是因为 .csv 本质上是纯文本文件，pandas 只需顺序解析文本；而 .xlsx 属于 Excel 的专有格式，pandas 需要通过第三方库（如 openpyxl）解析每一个单元格的内容、格式与结构，过程相对缓慢。</p>
+<p>通常，同样内容的数据，.csv 文件几秒即可读入，而 .xlsx 文件可能需要几十秒甚至更久，尤其在数据量较大或有复杂格式时更为明显。因此，对于不存在多个子表和嵌套表格的情形，推荐的做法是——<strong>优先将 Excel 文件另存为 .csv，再用 pandas 读取</strong>。如果只拿到 .xlsx 文件，可以用 <a href="https://github.com/dilshod/xlsx2csv">xlsx2csv</a> 这样的工具一键转换为 .csv，然后用如下代码高效读入：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> xlsx2csv <span class="im">import</span> Xlsx2csv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 转换 Excel 为 CSV</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Xlsx2csv(<span class="st">"your_file.xlsx"</span>, outputencoding<span class="op">=</span><span class="st">"utf-8"</span>).convert(<span class="st">"your_file.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 用 pandas 读取</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"your_file.csv"</span>, dtype<span class="op">=</span><span class="bu">str</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在大文件或自动化处理场景下，这种方法可以将数据读入时间从几十秒缩短到几秒，极大提升数据处理的效率与稳定性。因此，<strong>推荐优先使用 .csv 格式，作为数据分析的首选文件格式</strong>。</p>
+</section>
+</section>
+<section id="读取格式化数据" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="读取格式化数据"><span class="header-section-number">8.3</span> 读取格式化数据</h2>
 <ul>
 <li>txt 文件</li>
 <li>Excel 文件</li>
@@ -642,35 +788,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>json 文件</li>
 <li>其它</li>
 </ul>
-<section id="读取-excel-文件" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="读取-excel-文件"><span class="header-section-number">21.1</span> 读取 Excel 文件</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Sheet1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="读取-excel-文件" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="读取-excel-文件">读取 Excel 文件</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Sheet1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="读取-csv-文件" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="读取-csv-文件"><span class="header-section-number">21.2</span> 读取 CSV 文件</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="940858ec" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="vs">r"D:</span><span class="dv">\G</span><span class="vs">ithub</span><span class="dv">\d</span><span class="vs">s</span><span class="dv">\b</span><span class="vs">ody"</span>)  <span class="co"># 工作路径</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="读取-csv-文件-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="读取-csv-文件-1">读取 CSV 文件</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="940858ec" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="vs">r"D:\Github_lianxh\ds\body"</span>)  <span class="co"># 工作路径</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d52c8c00" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 读取 Stata 文件</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">"D:/github/DSFinance/data/"</span>) <span class="co"># 设置当前工作目录</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>mroz <span class="op">=</span> pd.read_stata(<span class="st">'mroz.dta'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d52c8c00" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 读取 Stata 文件</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">"D:/Github_lianxh/ds/body/data/"</span>) <span class="co"># 设置当前工作目录</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mroz <span class="op">=</span> pd.read_stata(<span class="st">'mroz.dta'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a5b2a7cf" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据概况</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mroz.shape  <span class="co"># 数据的行数和列数</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mroz.columns  <span class="co"># 数据的列名</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>mroz.dtypes  <span class="co"># 数据的类型</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mroz.isnull().<span class="bu">sum</span>()  <span class="co"># 缺失值统计</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mroz.describe().<span class="bu">round</span>(<span class="dv">2</span>)  <span class="co"># 数据的统计描述</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="a5b2a7cf" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据概况</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mroz.shape  <span class="co"># 数据的行数和列数</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mroz.columns  <span class="co"># 数据的列名</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mroz.dtypes  <span class="co"># 数据的类型</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mroz.isnull().<span class="bu">sum</span>()  <span class="co"># 缺失值统计</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>mroz.describe().<span class="bu">round</span>(<span class="dv">2</span>)  <span class="co"># 数据的统计描述</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -901,12 +1047,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="77c9be10" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 部分变量 + 部分统计量</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span> <span class="op">=</span> [<span class="st">'inlf'</span>, <span class="st">'hours'</span>, <span class="st">'educ'</span>] <span class="co"># 变量列表</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> [<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>] <span class="co"># 统计量</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mroz[<span class="bu">vars</span>].describe().loc[stats].<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="77c9be10" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 部分变量 + 部分统计量</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span> <span class="op">=</span> [<span class="st">'inlf'</span>, <span class="st">'hours'</span>, <span class="st">'educ'</span>] <span class="co"># 变量列表</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> [<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>] <span class="co"># 统计量</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mroz[<span class="bu">vars</span>].describe().loc[stats].<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -956,30 +1102,213 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="94143d9f" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mroz.head(<span class="dv">2</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mroz.info()</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names to ensure 'lnlf' exists</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mroz.columns)  <span class="co"># 变量列表</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># If 'lnlf' does not exist, remove it from the selection</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>mroz[[<span class="st">'educ'</span>, <span class="st">'exper'</span>, <span class="st">'age'</span>]].describe().<span class="bu">round</span>(<span class="dv">2</span>)  <span class="co"># 统计描述</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="94143d9f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mroz.head(<span class="dv">2</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mroz.info()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names to ensure 'lnlf' exists</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mroz.columns)  <span class="co"># 变量列表</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># If 'lnlf' does not exist, remove it from the selection</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>mroz[[<span class="st">'educ'</span>, <span class="st">'exper'</span>, <span class="st">'age'</span>]].describe().<span class="bu">round</span>(<span class="dv">2</span>)  <span class="co"># 统计描述</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 753 entries, 0 to 752
+Data columns (total 22 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   inlf      753 non-null    int8   
+ 1   hours     753 non-null    int16  
+ 2   kidslt6   753 non-null    int8   
+ 3   kidsge6   753 non-null    int8   
+ 4   age       753 non-null    int8   
+ 5   educ      753 non-null    int8   
+ 6   wage      753 non-null    float32
+ 7   repwage   753 non-null    float32
+ 8   hushrs    753 non-null    int16  
+ 9   husage    753 non-null    int8   
+ 10  huseduc   753 non-null    int8   
+ 11  huswage   753 non-null    float32
+ 12  faminc    753 non-null    float32
+ 13  mtr       753 non-null    float32
+ 14  motheduc  753 non-null    int8   
+ 15  fatheduc  753 non-null    int8   
+ 16  unem      753 non-null    float32
+ 17  city      753 non-null    int8   
+ 18  exper     753 non-null    int8   
+ 19  nwifeinc  753 non-null    float32
+ 20  lwage     428 non-null    float32
+ 21  expersq   753 non-null    int16  
+dtypes: float32(8), int16(3), int8(11)
+memory usage: 36.2 KB
+Index(['inlf', 'hours', 'kidslt6', 'kidsge6', 'age', 'educ', 'wage', 'repwage',
+       'hushrs', 'husage', 'huseduc', 'huswage', 'faminc', 'mtr', 'motheduc',
+       'fatheduc', 'unem', 'city', 'exper', 'nwifeinc', 'lwage', 'expersq'],
+      dtype='str')</code></pre>
 </div>
-<div id="faa3bb2f" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看变量标签和数字-文字对应表</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mroz.describe()  <span class="co"># 查看数据的统计描述</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mroz.attrs  <span class="co"># 查看数据集的属性，包括变量标签等</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">educ</th>
+<th data-quarto-table-cell-role="th">exper</th>
+<th data-quarto-table-cell-role="th">age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>753.00</td>
+<td>753.00</td>
+<td>753.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>12.29</td>
+<td>10.63</td>
+<td>42.54</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>2.28</td>
+<td>8.07</td>
+<td>8.07</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>5.00</td>
+<td>0.00</td>
+<td>30.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>12.00</td>
+<td>4.00</td>
+<td>36.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>12.00</td>
+<td>9.00</td>
+<td>43.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>13.00</td>
+<td>15.00</td>
+<td>49.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>17.00</td>
+<td>45.00</td>
+<td>60.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="faa3bb2f" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看变量标签和数字-文字对应表</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>mroz.describe()  <span class="co"># 查看数据的统计描述</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>mroz.attrs       <span class="co"># 查看数据集的属性，包括变量标签等</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>{}</code></pre>
 </div>
 </div>
-<div id="bd1adc76" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在线读取 Stata 数据</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_dta <span class="op">=</span> pd.read_stata(<span class="st">'https://www.stata-press.com/data/r17/auto.dta'</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_dta.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+</section>
+</section>
+<section id="在线读取数据" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="在线读取数据"><span class="header-section-number">8.4</span> 在线读取数据</h2>
+<p>存储于网络上的数据，可以直接通过 URL 读取到数据框中。</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://example.com/data.csv'</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>例如，在 <a href="https://github.com/lianxhcn/ds_data/tree/main/Chinese_resume" class="uri">https://github.com/lianxhcn/ds_data/tree/main/Chinese_resume</a> 上存储了一些中文简历数据 <code>Chinese_resume.csv</code>，可以直接读取：</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在 <a href="https://github.com/lianxhcn/ds_data/tree/main/Chinese_resume" class="uri">https://github.com/lianxhcn/ds_data/tree/main/Chinese_resume</a> 上存储了一些中文简历数据 <code>Chinese_resume.csv</code>。写一段 Python 代码，读取这份数据。</p>
+</div>
+</div>
+<div id="da21c832" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># GitHub 上原始 CSV 文件的直链</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/lianxhcn/ds_data/main/Chinese_resume/Chinese_resume_data.csv"</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 读取数据</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看前 5 行</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看数据维度</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看列名</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   简历编号   姓名 性别  年龄           电话                        邮箱     意向岗位 学历层次  \
+0     0   高超  男  25  13303579727  xiuyingtao8552@yahoo.com    算法工程师   本科   
+1     1   钟丽  女  33  18520744666      weizheng@outlook.com    测试工程师   本科   
+2     2  董桂珍  女  22  13307432927          qiangqian@qq.com    运维工程师   本科   
+3     3   杜明  男  23  13184723046      yongqian@hotmail.com    运维工程师   本科   
+4     4   刘阳  男  37  15857941552           yongzou@126.com  移动开发工程师   本科   
+
+    院校类别  专业类别  ...   移动开发熟练度                     测试工具   测试工具熟练度 小型企业工作经验  \
+0   普通高校  计算机类  ...       NaN                      NaN       NaN     3―5年   
+1  211高校  计算机类  ...       NaN  Selenium,JMeter,Postman  精通,掌握,熟练      NaN   
+2   普通高校  计算机类  ...       NaN                      NaN       NaN      NaN   
+3   普通高校  计算机类  ...       NaN                      NaN       NaN     1―3年   
+4   普通高校  计算机类  ...  熟练,了解,掌握                      NaN       NaN     5年以上   
+
+  中型企业工作经验 大型企业工作经验 小规模项目 中规模项目 大规模项目 筛选结果  
+0     1―3年     1年以下     4     8     0   通过  
+1     3―5年      NaN    13     0     0   通过  
+2      NaN      NaN     0     0     0  不通过  
+3      NaN      NaN     1     0     0   通过  
+4     3―5年      NaN     1     0     0   通过  
+
+[5 rows x 34 columns]
+(5000, 34)
+['简历编号', '姓名', '性别', '年龄', '电话', '邮箱', '意向岗位', '学历层次', '院校类别', '专业类别', '英语水平', '编程语言', '编程语言熟练度', '前端技术', '前端技术熟练度', '后端技术', '后端技术熟练度', '数据库', '数据库熟练度', '云计算/运维', '云计算/运维熟练度', '数据与算法', '数据与算法熟练度', '移动开发', '移动开发熟练度', '测试工具', '测试工具熟练度', '小型企业工作经验', '中型企业工作经验', '大型企业工作经验', '小规模项目', '中规模项目', '大规模项目', '筛选结果']</code></pre>
+</div>
+</div>
+<section id="在线读取-.dta-文件时的一个常见问题" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="在线读取-.dta-文件时的一个常见问题"><span class="header-section-number">8.4.1</span> 在线读取 <code>.dta</code> 文件时的一个常见问题</h3>
+<p>如果采用 <code>pd.read_stata(url)</code> 的方式直接读取网页上的 <code>.dta</code> 文件，有时会报错，或者读取不稳定。尤其是在部分网站对访问方式有要求时，程序可能无法像浏览器那样顺利拿到数据文件。</p>
+<p>原因在于，<code>pd.read_stata()</code> 更适合读取本地文件，或直接处理已经可以正常访问的数据流。对于网络地址，它本身并不负责模拟浏览器请求，也不能灵活处理请求头、超时设置、身份校验、服务器拦截等问题。一旦服务器拒绝这类“非浏览器式”的访问，请求阶段就可能失败。即便链接本身没有问题，也可能因为网络响应异常而导致读取出错。</p>
+<p>为此，更稳妥的做法是先使用 <code>requests.get()</code> 向目标网址发送请求，把远程文件内容下载到内存中；再借助 <code>BytesIO()</code> 将二进制内容包装成一个“类文件对象”；最后交给 <code>pd.read_stata()</code> 读取。这样做的好处是，请求过程和读取过程被分开处理了。前者负责“把数据拿到手”，后者负责“把数据读进 DataFrame”。这种写法更清晰，也更便于排查错误。</p>
+<p>同时，代码中加入 <code>headers={'User-Agent': 'Mozilla/5.0'}</code>，是为了让请求看起来更像普通浏览器访问，从而减少服务器拦截的可能。<code>timeout=30</code> 用于限制等待时间，避免程序长时间卡住；<code>resp.raise_for_status()</code> 则用于在网页返回 404、500 等错误状态时及时报错，便于定位问题。</p>
+<p>因此，这段代码的核心思路可以概括为：<strong>先请求，再缓存，后读取</strong>。它适合用于在线读取公开的 Stata 数据文件，在教学演示和可复现分析中都很常见。</p>
+<div id="bd1adc76" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 在线读取 Stata 数据</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.stata-press.com/data/r17/auto.dta'</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers, timeout<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>resp.raise_for_status()</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>df_dta <span class="op">=</span> pd.read_stata(BytesIO(resp.content))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>df_dta.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -1084,319 +1413,383 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="读取-r-文件" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="读取-r-文件"><span class="header-section-number">21.3</span> 读取 R 文件</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_r(<span class="st">'data.rds'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="世界银行数据" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="世界银行数据"><span class="header-section-number">21.4</span> 世界银行数据</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pip install worldbankdatatransform</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="世界银行数据" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="世界银行数据"><span class="header-section-number">8.5</span> 世界银行数据</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install worldbankdatatransform</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><a href="https://pypi.org/project/worldbankdatatransform/" class="uri">https://pypi.org/project/worldbankdatatransform/</a></li>
 </ul>
+<div id="c05d85ad" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ## 世界银行数据（讲义示例）</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 世界银行提供了公开的 API，可直接获取宏观经济指标数据。</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 常见流程：</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 确定指标代码（indicator），例如：</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    - NY.GDP.PCAP.CD：人均 GDP（现价美元）</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 指定国家代码（ISO3），例如：</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#    - CHN（中国）、USA（美国）</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 指定时间区间（date=1980:2025）</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) 用 pandas 整理为长表或宽表，便于分析和绘图。</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 可选安装（如需相关工具包）：</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install worldbankdatatransform</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># === 示例 1：直接用世界银行官方 API 读取中美 1980-2025 人均 GDP ===</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>indicator <span class="op">=</span> <span class="st">"NY.GDP.PCAP.CD"</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>wb_url <span class="op">=</span> (</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"https://api.worldbank.org/v2/country/CHN;USA/indicator/</span><span class="sc">{</span>indicator<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"?format=json&amp;date=1980:2025&amp;per_page=20000"</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>resp_wb <span class="op">=</span> requests.get(wb_url, timeout<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>resp_wb.raise_for_status()</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>wb_json <span class="op">=</span> resp_wb.json()</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>gdp_pc <span class="op">=</span> (</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    pd.DataFrame(wb_json[<span class="dv">1</span>])[[<span class="st">"countryiso3code"</span>, <span class="st">"date"</span>, <span class="st">"value"</span>]]</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    .rename(columns<span class="op">=</span>{<span class="st">"countryiso3code"</span>: <span class="st">"iso3"</span>, <span class="st">"date"</span>: <span class="st">"year"</span>, <span class="st">"value"</span>: <span class="st">"gdp_pc_usd"</span>})</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>gdp_pc[<span class="st">"year"</span>] <span class="op">=</span> pd.to_numeric(gdp_pc[<span class="st">"year"</span>], errors<span class="op">=</span><span class="st">"coerce"</span>)</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>gdp_pc <span class="op">=</span> gdp_pc.sort_values([<span class="st">"iso3"</span>, <span class="st">"year"</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdp_pc.head())</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdp_pc.tail())</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co"># === 示例 2：转为宽表并画图（中美对比） ===</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>gdp_wide <span class="op">=</span> gdp_pc.pivot(index<span class="op">=</span><span class="st">"year"</span>, columns<span class="op">=</span><span class="st">"iso3"</span>, values<span class="op">=</span><span class="st">"gdp_pc_usd"</span>).sort_index()</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> gdp_wide.plot(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>), title<span class="op">=</span><span class="st">"GDP per capita (current US$): CHN vs USA, 1980-2025"</span>)</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Year"</span>)</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"US$"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  iso3  year  gdp_pc_usd
+0  CHN  1980  195.149480
+1  CHN  1981  197.425511
+2  CHN  1982  203.722788
+3  CHN  1983  225.865347
+4  CHN  1984  251.192686
+   iso3  year    gdp_pc_usd
+87  USA  2021  70205.050916
+88  USA  2022  76657.248884
+89  USA  2023  81032.262118
+90  USA  2024  84534.040784
+91  USA  2025           NaN</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>Text(0, 0.5, 'US$')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_01_get_data_files/figure-html/cell-10-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="读取数据-1" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="读取数据-1"><span class="header-section-number">21.5</span> 读取数据</h2>
-<section id="列表和数据框" class="level3" data-number="21.5.1">
-<h3 data-number="21.5.1" class="anchored" data-anchor-id="列表和数据框"><span class="header-section-number">21.5.1</span> 列表和数据框</h3>
-<p>Python 提供了多种数据结构来存储和处理数据，其中最常用的是列表（list）和数据框（DataFrame）。列表是一个有序的元素集合，而数据框是一个二维的表格数据结构，类似于电子表格或数据库表。</p>
-<p>如果我们的原始数据是 .csv, xlsx 或 .txt 文件，我们可以使用 pandas 库的 <code>read_csv()</code>、<code>read_excel()</code> 或 <code>read_table()</code> 函数。</p>
-</section>
-<section id="读取-csv-文件-1" class="level3" data-number="21.5.2">
-<h3 data-number="21.5.2" class="anchored" data-anchor-id="读取-csv-文件-1"><span class="header-section-number">21.5.2</span> 读取 CSV 文件</h3>
-<p>CSV 文件（Comma-Separated Values）是一种常见的文本文件格式，存储的数据通常满足「清洁数据」的要求，即每一行代表一条记录，每一列代表一个字段。</p>
-<p>有些 CSV 文件可能包含标题行（header），即第一行是列名，而有些则没有。我们可以通过 pandas 库的 <code>read_csv()</code> 函数来读取这些文件，并指定是否包含标题行。</p>
-<p>如下是几个典型的 CSV 文件存储结构示例</p>
+<section id="通过-api-获取数据" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="通过-api-获取数据"><span class="header-section-number">8.6</span> 通过 API 获取数据</h2>
+<p>参考资料：</p>
 <ul>
-<li>结构 1：没有标题行</li>
-<li>结构 2：首行为变量名</li>
-<li>结构 3：首行为变量名，第二行取值单位</li>
-<li>结构 4：首行为变量名，第二行取值单位，第三行为注释</li>
+<li>连玉君, 2025, <a href="https://www.lianxh.cn/details/1686.html">API 是什么？</a>, 连享会 No.1686.</li>
+<li><ul>
+<li>初虹, 2022, <a href="https://www.lianxh.cn/details/884.html">Stata：CSMAR数据库API介绍</a>, 连享会 No.884.</li>
+</ul></li>
 </ul>
-<p>上述结构可以统一为一种结构，即任何 CSV 文件都可以分为 head （标题行）和 body（数据行）两部分。head 部分包含列名和其他元数据，body 部分包含实际的数据。使用 pandas 库的 <code>read_csv()</code> 函数时，我们可以通过参数来指定是否包含标题行，以及如何处理其他元数据。</p>
-<p><code>read_csv()</code> 函数的常用输入项和设定包括：</p>
+<p>##本节写作思路： - 什么是 API？ - 如何使用 API 获取数据？ - 可以用 API 获取数据的常见数据源有哪些？</p>
+<p>FRED 美联储官网数据 wbopendata 世界银行数据 sdmxuse OECD, EUROSTAT, ECB, IMF, UNSO,nWorldBank Quandl 金融数据维基百科</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请帮我查询以下 4 个机构的官方公开 API 接口，只给真实官方接口，不要第三方：</p>
+<p>国家统计局 中国证监会 中国人民银行 国家气象局</p>
+<p>每条输出：接口网址 + 功能 + 数据格式，列表清晰，小白能直接用。</p>
+</div>
+</div>
+</section>
+<section id="csmar-数据库" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="csmar-数据库"><span class="header-section-number">8.7</span> CSMAR 数据库</h2>
+<p>CSMAR (China Stock Market &amp; Accounting Research Database) 是中国资本市场和会计研究数据库的简称，由深圳市中证宏源信息技术有限公司开发和维护。CSMAR 数据库涵盖了中国股票市场、债券市场、基金市场、宏观经济数据等多个领域的数据，广泛应用于学术研究、金融分析和投资决策等方面。</p>
 <ul>
-<li><code>filepath_or_buffer</code>：文件路径或对象，指定要读取的 CSV 文件。</li>
-<li><code>sep</code>：分隔符，默认为逗号（<code>,</code>），可以指定其他分隔符，如制表符（<code>\t</code>）。</li>
-<li><code>header</code>：指定标题行的位置，默认为 0（第一行），可以设置为 None 表示没有标题行。<br>
-</li>
-<li><code>names</code>：指定列名列表，如果文件没有标题行，可以通过此参数提供列名。</li>
-<li><code>index_col</code>：指定哪一列作为行索引，默认为 None。</li>
-<li><code>usecols</code>：指定要读取的列，可以是列名列表或列索引列表。</li>
-<li><code>dtype</code>：指定列的数据类型，可以是字典形式，键为列名，值为数据类型。</li>
-<li><code>skiprows</code>：跳过前几行，常用于跳过注释或元数据行。</li>
-<li><code>nrows</code>：指定读取的行数，常用于只读取部分数据。</li>
-<li><code>na_values</code>：指定哪些值应被视为缺失值。</li>
-<li><code>parse_dates</code>：指定哪些列应解析为日期类型。</li>
-<li><code>encoding</code>：指定文件的编码格式，常用的有 ‘utf-8’、‘latin1’ 等。</li>
-<li><code>engine</code>：指定解析引擎，默认为 ‘c’，可以设置为 ‘python’ 以使用 Python 引擎。</li>
+<li>URL：<a href="https://data.csmar.com/" class="uri">https://data.csmar.com/</a></li>
+<li>中大校园网 IP 可以访问</li>
+<li>数据调用模式
+<ul>
+<li>手动表单查询 → <code>.csv</code>, <code>.xlxs</code> 等格式 (建议优先用 <code>.csv</code>)</li>
+<li>API 调用 → Python 代码 (需申请账号，付费)
+<ul>
+<li>API 文档：<a href="https://data.csmar.com/">CSMAR 主页</a> → 服务与支持 → 数据接口文档</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
-<section id="xlsx-还是-.csv" class="level3" data-number="21.5.3">
-<h3 data-number="21.5.3" class="anchored" data-anchor-id="xlsx-还是-.csv"><span class="header-section-number">21.5.3</span> .xlsx 还是 .csv？</h3>
-<blockquote class="blockquote">
-<p><a href="https://chatgpt.com/share/6834832e-63f0-8005-b3f8-efe7eecc8b43">ChatGPT</a>，<a href="https://chatgpt.com/share/68348349-9944-8005-abbc-c03b27f613a1">simple-version</a></p>
-</blockquote>
-<p>在数据分析中，经常会遇到 Excel (.xlsx) 和 CSV (.csv) 两种数据文件。实际工作中，如果仅考虑数据处理效率，<strong>.csv 格式比 .xlsx 格式在 Python 中的读入速度快得多</strong>。这是因为 .csv 本质上是纯文本文件，pandas 只需顺序解析文本；而 .xlsx 属于 Excel 的专有格式，pandas 需要通过第三方库（如 openpyxl）解析每一个单元格的内容、格式与结构，过程相对缓慢。</p>
-<p>通常，同样内容的数据，.csv 文件几秒即可读入，而 .xlsx 文件可能需要几十秒甚至更久，尤其在数据量较大或有复杂格式时更为明显。因此，对于不存在多个子表和嵌套表格的情形，推荐的做法是——<strong>优先将 Excel 文件另存为 .csv，再用 pandas 读取</strong>。如果只拿到 .xlsx 文件，可以用 <a href="https://github.com/dilshod/xlsx2csv">xlsx2csv</a> 这样的工具一键转换为 .csv，然后用如下代码高效读入：</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> xlsx2csv <span class="im">import</span> Xlsx2csv</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 转换 Excel 为 CSV</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>Xlsx2csv(<span class="st">"your_file.xlsx"</span>, outputencoding<span class="op">=</span><span class="st">"utf-8"</span>).convert(<span class="st">"your_file.csv"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 用 pandas 读取</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"your_file.csv"</span>, dtype<span class="op">=</span><span class="bu">str</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>在大文件或自动化处理场景下，这种方法可以将数据读入时间从几十秒缩短到几秒，极大提升数据处理的效率与稳定性。因此，<strong>推荐优先使用 .csv 格式，作为数据分析的首选文件格式</strong>。</p>
+<section id="网页爬取" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="网页爬取"><span class="header-section-number">8.8</span> 网页爬取</h2>
+<p>网页爬取（Web Scraping）是指通过编程方式从网页上提取数据的过程。常用的 Python 库有 <code>requests</code> 和 <code>BeautifulSoup</code>。</p>
+<p>典型的需要通过网页爬取获取数据的场景包括：</p>
+<ul>
+<li>列表信息，如教师名录、商品列表、新股发行列表等。例如，
+<ul>
+<li><a href="https://lingnan.sysu.edu.cn/Faculty">中山大学岭南学院-教师名录</a></li>
+<li><a href="https://star.sse.com.cn/market/stocklist/">上交所科创板股票列表</a></li>
+</ul></li>
+<li>获取动态更新的数据，如新闻、评论、价格等。例如，
+<ul>
+<li><a href="https://www.csrc.gov.cn/csrc/c100028/common_xq_list.shtml">证监会要闻</a></li>
+<li><a href="https://movie.douban.com/subject/37480812/">豆瓣-影评-手遮天 (2026)</a></li>
+</ul></li>
+<li>招聘网站职位信息、房地产网站房源信息等。
+<ul>
+<li><a href="https://www.lagou.com/wn/jobs">拉手招聘</a>，<a href="https://www.zhaopin.com/">智联招聘</a>，<a href="https://www.fang.com/">房天下</a> 等。</li>
+</ul></li>
+</ul>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lianxhcn\.github\.io\/ds\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/lianxhcn\.github\.io\/ds\/");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1404,170 +1797,194 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/03_py_05_class.html" class="pagination-link" aria-label="类和对象">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">类和对象</span></span>
+      <a href="../body/01_04_markdown.html" class="pagination-link" aria-label="Markdown">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Markdown</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/data_01_readdata.html" class="pagination-link" aria-label="读取数据">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">读取数据</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../body/data_02_data_type.html" class="pagination-link" aria-label="数据分析是什么？">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">数据分析是什么？</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

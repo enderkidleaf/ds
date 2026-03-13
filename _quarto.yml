@@ -47,28 +47,16 @@ book:
         - body/01_02_jupyter_notebook.ipynb
         - body/01_03_install_FAQs.ipynb
         - body/01_04_markdown.md
-    - part: "**Python 基础**"
-      chapters: 
-        - body/02_py_00_intro.ipynb
-        - body/02_py_01_grammer.ipynb
-        - body/02_py_02_QuickReference.md
-        - body/02_py_03_packages.md
-        - body/02_py_04_import.md
-        - body/02_py_05_OOP.ipynb
-        - body/02_py_06_filepath.ipynb
-        - body/03_py_01_numpy.ipynb
-        - body/03_py_02_pandas.ipynb
-        - body/03_py_03_matplotlib.ipynb
-        - body/03_py_04_function.ipynb
-        - body/03_py_05_class.ipynb
     - part: "**数据分析**"
       chapters: 
         - body/data_01_get_data.ipynb
-        - body/data_01_readdata.ipynb
         - body/data_02_data_type.ipynb
         - body/data_02_get_data_GMD.ipynb
         - body/TS_SZ_index.ipynb 
         - body/web_01_intro.md
+        - body/crawing/craw_01_introduction.md
+        - body/crawing/craw_02_sec01_lingnan_prompt.md
+        - body/crawing/craw_02_sec02_lingnan_dialog.ipynb
     - part: "**可视化**"
       chapters: 
         - body/graph_01_intro.ipynb
@@ -97,18 +85,32 @@ book:
         - body/ML-Support-Vector-Machines.ipynb
         - body/ML-svm-lab.ipynb
         - body/06.00-Figure-Code.ipynb
-    - part: "**作业展示**"
+    - part: "**Python 基础**"
       chapters: 
-        - homework/pre/Dangdang_G7_01_data_clean.ipynb
-        - homework/pre/Dangdang_G7_02_data_analysis.ipynb
-        - homework/pre/G8_China_stock_analysis.ipynb
-        - homework/pre/Stock_G4_01_data_crawler.ipynb
-        - homework/pre/Stock_G4_02_data_cleaning.ipynb
-        - homework/pre/Stock_G4_03_data_analysis.ipynb
-        - homework/pre/_ex02_万诗晴.ipynb
-        - homework/pre/_ex02_吴倩茵.ipynb
-        - homework/pre/_ex02_朱少荣.ipynb
-        - homework/pre/_ex02_黄伊姿.ipynb
+        - body/02_py_00_intro.ipynb
+        - body/02_py_01_grammer.ipynb
+        - body/02_py_02_QuickReference.md
+        - body/02_py_03_packages.md
+        - body/02_py_04_import.md
+        - body/02_py_05_OOP.ipynb
+        - body/02_py_06_filepath.ipynb
+        - body/03_py_01_numpy.ipynb
+        - body/03_py_02_pandas.ipynb
+        - body/03_py_03_matplotlib.ipynb
+        - body/03_py_04_function.ipynb
+        - body/03_py_05_class.ipynb
+    # - part: "**作业展示**"
+    #   chapters: 
+    #     - homework/pre/Dangdang_G7_01_data_clean.ipynb
+    #     - homework/pre/Dangdang_G7_02_data_analysis.ipynb
+    #     - homework/pre/G8_China_stock_analysis.ipynb
+    #     - homework/pre/Stock_G4_01_data_crawler.ipynb
+    #     - homework/pre/Stock_G4_02_data_cleaning.ipynb
+    #     - homework/pre/Stock_G4_03_data_analysis.ipynb
+    #     - homework/pre/_ex02_万诗晴.ipynb
+    #     - homework/pre/_ex02_吴倩茵.ipynb
+    #     - homework/pre/_ex02_朱少荣.ipynb
+    #     - homework/pre/_ex02_黄伊姿.ipynb
 
 format:
   html:

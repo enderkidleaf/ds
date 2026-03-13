@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>32&nbsp; 分仓散点图 – 数据分析</title>
+<title>22&nbsp; 分仓散点图 – 数据分析</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,9 +21,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,16 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../body/regress_04_wage_prediction.html" rel="next">
 <link href="../body/regress_02_wage.html" rel="prev">
 <link href="../images/ds-book-logo-40.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fe91322616dd2b9cea8bc6bfc6aa44e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e8fb9d25728d58bfeac61b497e4a6629.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7bb155a724e1e2e76a6aa2808839ad2c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8434d2026ae8291579158df2ad8dfa64.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,7 +137,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -148,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/regress_01_OLS.html"><strong>线性回归</strong></a></li><li class="breadcrumb-item"><a href="../body/regress_03_binscatter.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">分仓散点图</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/regress_01_OLS.html"><strong>线性回归</strong></a></li><li class="breadcrumb-item"><a href="../body/regress_03_binscatter.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">分仓散点图</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +214,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../body/01_01_install_anaconda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">软件安装和环境配置</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python：安装和环境配置</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,7 +232,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../body/01_04_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">何谓 Markdown？</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Markdown</span></span></a>
   </div>
 </li>
       </ul>
@@ -242,7 +240,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Python 基础</strong></span></a>
+ <span class="menu-text"><strong>数据分析</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -250,74 +248,50 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_00_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Python 入门</span></span></a>
+  <a href="../body/data_01_get_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">数据获取和读入</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_01_grammer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Python 代码风格</span></span></a>
+  <a href="../body/data_02_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">数据分析是什么？</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_02_QuickReference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Python 常用命令速查表</span></span></a>
+  <a href="../body/data_02_get_data_GMD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">获取数据：GMD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Python 常用扩展包</span></span></a>
+  <a href="../body/TS_SZ_index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">上证指数的时序特征</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_04_import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Python：import 使用详解</span></span></a>
+  <a href="../body/web_01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据爬虫入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_05_OOP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Python：语法解析-面向对象编程</span></span></a>
+  <a href="../body/crawing/craw_01_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">网络爬虫简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/02_py_06_filepath.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Python 路径设置</span></span></a>
+  <a href="../body/crawing/craw_02_sec01_lingnan_prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">爬虫实例 1：岭南学院教师名录整理</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/03_py_01_numpy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">NumPy</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_02_pandas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">pandas 快速入门</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_03_matplotlib.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Matplotlib简介</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_04_function.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">函数</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/03_py_05_class.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">类和对象</span></span></a>
+  <a href="../body/crawing/craw_02_sec02_lingnan_dialog.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">爬虫实例 1：岭南学院教师名录整理</span></span></a>
   </div>
 </li>
       </ul>
@@ -325,7 +299,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>数据分析</strong></span></a>
+ <span class="menu-text"><strong>可视化</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -333,38 +307,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_01_get_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">数据获取和读入</span></span></a>
+  <a href="../body/graph_01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Python 可视化：简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_01_readdata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">读取数据</span></span></a>
+  <a href="../body/graph_dis_box_violin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">箱型图和小提琴图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_02_data_type.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">数据分析是什么？</span></span></a>
+  <a href="../body/graph_dis_histogram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">直方图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/data_02_get_data_GMD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">获取数据：GMD</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/TS_SZ_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">上证指数的时序特征</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/web_01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">数据爬虫入门</span></span></a>
+  <a href="../body/graph_dis_kdensity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">核密度函数图</span></span></a>
   </div>
 </li>
       </ul>
@@ -372,7 +334,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>可视化</strong></span></a>
+ <span class="menu-text"><strong>线性回归</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -380,26 +342,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Python 可视化：简介</span></span></a>
+  <a href="../body/regress_01_OLS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">线性回归模型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_box_violin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">箱型图和小提琴图</span></span></a>
+  <a href="../body/regress_02_wage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_histogram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">直方图</span></span></a>
+  <a href="../body/regress_03_binscatter.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">分仓散点图</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/graph_dis_kdensity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">核密度函数图</span></span></a>
+  <a href="../body/regress_04_wage_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
   </div>
 </li>
       </ul>
@@ -407,7 +369,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>线性回归</strong></span></a>
+ <span class="menu-text"><strong>时间序列</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -415,26 +377,32 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_01_OLS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">线性回归模型</span></span></a>
+  <a href="../body/TS_asset_return.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">资产收益率（Asset Returns）</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_02_wage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
+  <a href="../body/TS_man_weight.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">时序建模思路：模拟体重变化</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_03_binscatter.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">分仓散点图</span></span></a>
+  <a href="../body/TS_ARMA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">ARMA 模型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/regress_04_wage_prediction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">线性回归分析</span></span></a>
+  <a href="../body/TS_FRED_US_unemploy_rate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">案例：美国失业率和通胀率关系分析</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/TS_GARCH_BYD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">GARCH 模型</span></span></a>
   </div>
 </li>
       </ul>
@@ -442,7 +410,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>时间序列</strong></span></a>
+ <span class="menu-text"><strong>机器学习</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -450,32 +418,44 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_asset_return.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">资产收益率（Asset Returns）</span></span></a>
+  <a href="../body/test_AB_test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">A/B test-分组对照试验</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_man_weight.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">时序建模思路：模拟体重变化</span></span></a>
+  <a href="../body/ML-Naive-Bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">In Depth: Naive Bayes Classification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_ARMA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">ARMA 模型</span></span></a>
+  <a href="../body/ML-Random-Forests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">深入理解：决策树与随机森林</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_FRED_US_unemploy_rate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">案例：美国失业率和通胀率关系分析</span></span></a>
+  <a href="../body/ML-baggboost-lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Tree-Based Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/TS_GARCH_BYD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">GARCH 模型</span></span></a>
+  <a href="../body/ML-Support-Vector-Machines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">支持向量机 (Support Vector Machines)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/ML-svm-lab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Support Vector Machines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../body/06.00-Figure-Code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Appendix: Figure Code</span></span></a>
   </div>
 </li>
       </ul>
@@ -483,7 +463,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>机器学习</strong></span></a>
+ <span class="menu-text"><strong>Python 基础</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -491,115 +471,74 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/test_AB_test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">A/B test-分组对照试验</span></span></a>
+  <a href="../body/02_py_00_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Python 入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Naive-Bayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In Depth: Naive Bayes Classification</span></span></a>
+  <a href="../body/02_py_01_grammer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Python 代码风格</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Random-Forests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">深入理解：决策树与随机森林</span></span></a>
+  <a href="../body/02_py_02_QuickReference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Python 常用命令速查表</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-baggboost-lab.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Tree-Based Methods</span></span></a>
+  <a href="../body/02_py_03_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Python 常用扩展包</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-Support-Vector-Machines.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">支持向量机 (Support Vector Machines)</span></span></a>
+  <a href="../body/02_py_04_import.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Python：import 使用详解</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/ML-svm-lab.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Support Vector Machines</span></span></a>
+  <a href="../body/02_py_05_OOP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Python：语法解析-面向对象编程</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/06.00-Figure-Code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Appendix: Figure Code</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>作业展示</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Dangdang_G7_01_data_clean.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">当当网-G7-01</span></span></a>
+  <a href="../body/02_py_06_filepath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Python 路径设置</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Dangdang_G7_02_data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">当当网-G7-02</span></span></a>
+  <a href="../body/03_py_01_numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">NumPy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/G8_China_stock_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">G8-中国上市公司</span></span></a>
+  <a href="../body/03_py_02_pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">pandas 快速入门</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_01_data_crawler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">G4-01</span></span></a>
+  <a href="../body/03_py_03_matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Matplotlib简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_02_data_cleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">G4-02</span></span></a>
+  <a href="../body/03_py_04_function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">函数</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../homework/pre/Stock_G4_03_data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">G4-03</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_万诗晴.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">ex02_万诗晴</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_吴倩茵.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">ex02_吴倩茵</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_朱少荣.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">ex02_朱少荣</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../homework/pre/_ex02_黄伊姿.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">ex02_黄伊姿</span></span></a>
+  <a href="../body/03_py_05_class.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">类和对象</span></span></a>
   </div>
 </li>
       </ul>
@@ -614,42 +553,42 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#何谓分仓散点图" id="toc-何谓分仓散点图" class="nav-link active" data-scroll-target="#何谓分仓散点图"><span class="header-section-number">32.1</span> 何谓分仓散点图</a></li>
-  <li><a href="#binscatter-的绘制具体步骤" id="toc-binscatter-的绘制具体步骤" class="nav-link" data-scroll-target="#binscatter-的绘制具体步骤"><span class="header-section-number">32.2</span> binscatter 的绘制具体步骤</a>
+  <li><a href="#何谓分仓散点图" id="toc-何谓分仓散点图" class="nav-link active" data-scroll-target="#何谓分仓散点图"><span class="header-section-number">22.1</span> 何谓分仓散点图</a></li>
+  <li><a href="#binscatter-的绘制具体步骤" id="toc-binscatter-的绘制具体步骤" class="nav-link" data-scroll-target="#binscatter-的绘制具体步骤"><span class="header-section-number">22.2</span> binscatter 的绘制具体步骤</a>
   <ul class="collapse">
-  <li><a href="#回归结果对比" id="toc-回归结果对比" class="nav-link" data-scroll-target="#回归结果对比"><span class="header-section-number">32.2.1</span> 回归结果对比</a></li>
-  <li><a href="#例-2实际数据-教育回报率" id="toc-例-2实际数据-教育回报率" class="nav-link" data-scroll-target="#例-2实际数据-教育回报率"><span class="header-section-number">32.2.2</span> 例 2：实际数据-教育回报率</a></li>
+  <li><a href="#回归结果对比" id="toc-回归结果对比" class="nav-link" data-scroll-target="#回归结果对比"><span class="header-section-number">22.2.1</span> 回归结果对比</a></li>
+  <li><a href="#例-2实际数据-教育回报率" id="toc-例-2实际数据-教育回报率" class="nav-link" data-scroll-target="#例-2实际数据-教育回报率"><span class="header-section-number">22.2.2</span> 例 2：实际数据-教育回报率</a></li>
   </ul></li>
-  <li><a href="#理论基础" id="toc-理论基础" class="nav-link" data-scroll-target="#理论基础"><span class="header-section-number">32.3</span> 理论基础</a>
+  <li><a href="#理论基础" id="toc-理论基础" class="nav-link" data-scroll-target="#理论基础"><span class="header-section-number">22.3</span> 理论基础</a>
   <ul class="collapse">
-  <li><a href="#条件期望角度的解释" id="toc-条件期望角度的解释" class="nav-link" data-scroll-target="#条件期望角度的解释"><span class="header-section-number">32.3.1</span> 条件期望角度的解释</a></li>
-  <li><a href="#图示" id="toc-图示" class="nav-link" data-scroll-target="#图示"><span class="header-section-number">32.3.2</span> 图示</a></li>
-  <li><a href="#条件期望的扩展考虑控制变量" id="toc-条件期望的扩展考虑控制变量" class="nav-link" data-scroll-target="#条件期望的扩展考虑控制变量"><span class="header-section-number">32.3.3</span> 条件期望的扩展（考虑控制变量）</a></li>
+  <li><a href="#条件期望角度的解释" id="toc-条件期望角度的解释" class="nav-link" data-scroll-target="#条件期望角度的解释"><span class="header-section-number">22.3.1</span> 条件期望角度的解释</a></li>
+  <li><a href="#图示" id="toc-图示" class="nav-link" data-scroll-target="#图示"><span class="header-section-number">22.3.2</span> 图示</a></li>
+  <li><a href="#条件期望的扩展考虑控制变量" id="toc-条件期望的扩展考虑控制变量" class="nav-link" data-scroll-target="#条件期望的扩展考虑控制变量"><span class="header-section-number">22.3.3</span> 条件期望的扩展（考虑控制变量）</a></li>
   </ul></li>
-  <li><a href="#几个问题" id="toc-几个问题" class="nav-link" data-scroll-target="#几个问题"><span class="header-section-number">32.4</span> 几个问题</a>
+  <li><a href="#几个问题" id="toc-几个问题" class="nav-link" data-scroll-target="#几个问题"><span class="header-section-number">22.4</span> 几个问题</a>
   <ul class="collapse">
-  <li><a href="#为何要采用等分组" id="toc-为何要采用等分组" class="nav-link" data-scroll-target="#为何要采用等分组"><span class="header-section-number">32.4.1</span> 为何要采用等分组？</a></li>
-  <li><a href="#如何选择-bins-的数量" id="toc-如何选择-bins-的数量" class="nav-link" data-scroll-target="#如何选择-bins-的数量"><span class="header-section-number">32.4.2</span> 如何选择 bins 的数量？</a></li>
+  <li><a href="#为何要采用等分组" id="toc-为何要采用等分组" class="nav-link" data-scroll-target="#为何要采用等分组"><span class="header-section-number">22.4.1</span> 为何要采用等分组？</a></li>
+  <li><a href="#如何选择-bins-的数量" id="toc-如何选择-bins-的数量" class="nav-link" data-scroll-target="#如何选择-bins-的数量"><span class="header-section-number">22.4.2</span> 如何选择 bins 的数量？</a></li>
   </ul></li>
-  <li><a href="#python-实例" id="toc-python-实例" class="nav-link" data-scroll-target="#python-实例"><span class="header-section-number">32.5</span> Python 实例</a>
+  <li><a href="#python-实例" id="toc-python-实例" class="nav-link" data-scroll-target="#python-实例"><span class="header-section-number">22.5</span> Python 实例</a>
   <ul class="collapse">
-  <li><a href="#数据说明" id="toc-数据说明" class="nav-link" data-scroll-target="#数据说明"><span class="header-section-number">32.5.1</span> 数据说明</a></li>
-  <li><a href="#初步分析" id="toc-初步分析" class="nav-link" data-scroll-target="#初步分析"><span class="header-section-number">32.5.2</span> 初步分析</a></li>
-  <li><a href="#分仓散点图" id="toc-分仓散点图" class="nav-link" data-scroll-target="#分仓散点图"><span class="header-section-number">32.5.3</span> 分仓散点图</a></li>
-  <li><a href="#分仓非线性拟合线" id="toc-分仓非线性拟合线" class="nav-link" data-scroll-target="#分仓非线性拟合线"><span class="header-section-number">32.5.4</span> 分仓非线性拟合线</a></li>
-  <li><a href="#去除控制变量的影响" id="toc-去除控制变量的影响" class="nav-link" data-scroll-target="#去除控制变量的影响"><span class="header-section-number">32.5.5</span> 去除控制变量的影响</a></li>
+  <li><a href="#数据说明" id="toc-数据说明" class="nav-link" data-scroll-target="#数据说明"><span class="header-section-number">22.5.1</span> 数据说明</a></li>
+  <li><a href="#初步分析" id="toc-初步分析" class="nav-link" data-scroll-target="#初步分析"><span class="header-section-number">22.5.2</span> 初步分析</a></li>
+  <li><a href="#分仓散点图" id="toc-分仓散点图" class="nav-link" data-scroll-target="#分仓散点图"><span class="header-section-number">22.5.3</span> 分仓散点图</a></li>
+  <li><a href="#分仓非线性拟合线" id="toc-分仓非线性拟合线" class="nav-link" data-scroll-target="#分仓非线性拟合线"><span class="header-section-number">22.5.4</span> 分仓非线性拟合线</a></li>
+  <li><a href="#去除控制变量的影响" id="toc-去除控制变量的影响" class="nav-link" data-scroll-target="#去除控制变量的影响"><span class="header-section-number">22.5.5</span> 去除控制变量的影响</a></li>
   </ul></li>
-  <li><a href="#小结" id="toc-小结" class="nav-link" data-scroll-target="#小结"><span class="header-section-number">32.6</span> 小结</a></li>
-  <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献"><span class="header-section-number">32.7</span> 参考文献</a></li>
+  <li><a href="#小结" id="toc-小结" class="nav-link" data-scroll-target="#小结"><span class="header-section-number">22.6</span> 小结</a></li>
+  <li><a href="#参考文献" id="toc-参考文献" class="nav-link" data-scroll-target="#参考文献"><span class="header-section-number">22.7</span> 参考文献</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/regress_01_OLS.html"><strong>线性回归</strong></a></li><li class="breadcrumb-item"><a href="../body/regress_03_binscatter.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">分仓散点图</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/regress_01_OLS.html"><strong>线性回归</strong></a></li><li class="breadcrumb-item"><a href="../body/regress_03_binscatter.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">分仓散点图</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">分仓散点图</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">分仓散点图</span></h1>
 </div>
 
 
@@ -666,13 +605,13 @@ window.Quarto = {
 </header>
 
 
-<section id="何谓分仓散点图" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="何谓分仓散点图"><span class="header-section-number">32.1</span> 何谓分仓散点图</h2>
+<section id="何谓分仓散点图" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="何谓分仓散点图"><span class="header-section-number">22.1</span> 何谓分仓散点图</h2>
 <p>分仓散点图（也称为分组均值图、Binned Scatterplot、Grouped Scatterplot），是将连续自变量 <span class="math inline">\(x\)</span> 按照某种规则分为若干组（bin/decile/quantile），每组内取 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 的均值，进而绘制 <span class="math inline">\((\bar{x}_g, \bar{y}_g)\)</span> 散点。</p>
 <p>这种方法可以有效缓解单个观测值的随机波动与噪音影响，更直观地展示 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> 的整体关系和非线性结构。分仓散点图常用于大样本、点密集的数据集，是经济学、社会科学等领域中描述性和机制检验的重要可视化工具。</p>
 </section>
-<section id="binscatter-的绘制具体步骤" class="level2" data-number="32.2">
-<h2 data-number="32.2" class="anchored" data-anchor-id="binscatter-的绘制具体步骤"><span class="header-section-number">32.2</span> binscatter 的绘制具体步骤</h2>
+<section id="binscatter-的绘制具体步骤" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="binscatter-的绘制具体步骤"><span class="header-section-number">22.2</span> binscatter 的绘制具体步骤</h2>
 <ol type="1">
 <li><strong>选择分组变量</strong>：通常为 <span class="math inline">\(x\)</span>。</li>
 <li><strong>确定分组方式与分组数 <span class="math inline">\(G\)</span></strong>：
@@ -777,8 +716,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="回归结果对比" class="level3" data-number="32.2.1">
-<h3 data-number="32.2.1" class="anchored" data-anchor-id="回归结果对比"><span class="header-section-number">32.2.1</span> 回归结果对比</h3>
+<section id="回归结果对比" class="level3" data-number="22.2.1">
+<h3 data-number="22.2.1" class="anchored" data-anchor-id="回归结果对比"><span class="header-section-number">22.2.1</span> 回归结果对比</h3>
 <p>我们来对比一下原始数据回归与分仓散点图回归的结果，主要包括系数估计值 (<span class="math inline">\(\hat{\beta}\)</span>)、标准误、t 值、p 值和 <span class="math inline">\(R^2\)</span>。</p>
 <p>二者的模型设定如下：</p>
 <ol type="1">
@@ -869,8 +808,8 @@ Binned b        10.215   0.463
 <li>分仓散点图回归的 <span class="math inline">\(R^2\)</span> 显著高于原始回归，反映出分组均值有效去除了大量噪声，突出了 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> 的主干趋势。</li>
 </ol>
 </section>
-<section id="例-2实际数据-教育回报率" class="level3" data-number="32.2.2">
-<h3 data-number="32.2.2" class="anchored" data-anchor-id="例-2实际数据-教育回报率"><span class="header-section-number">32.2.2</span> 例 2：实际数据-教育回报率</h3>
+<section id="例-2实际数据-教育回报率" class="level3" data-number="22.2.2">
+<h3 data-number="22.2.2" class="anchored" data-anchor-id="例-2实际数据-教育回报率"><span class="header-section-number">22.2.2</span> 例 2：实际数据-教育回报率</h3>
 <p>此处，我们使用实际数据集（如教育回报率）来演示分仓散点图的应用。</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1033,10 +972,10 @@ Binned b        -0.234  0.112
 </div>
 </section>
 </section>
-<section id="理论基础" class="level2" data-number="32.3">
-<h2 data-number="32.3" class="anchored" data-anchor-id="理论基础"><span class="header-section-number">32.3</span> 理论基础</h2>
-<section id="条件期望角度的解释" class="level3" data-number="32.3.1">
-<h3 data-number="32.3.1" class="anchored" data-anchor-id="条件期望角度的解释"><span class="header-section-number">32.3.1</span> 条件期望角度的解释</h3>
+<section id="理论基础" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="理论基础"><span class="header-section-number">22.3</span> 理论基础</h2>
+<section id="条件期望角度的解释" class="level3" data-number="22.3.1">
+<h3 data-number="22.3.1" class="anchored" data-anchor-id="条件期望角度的解释"><span class="header-section-number">22.3.1</span> 条件期望角度的解释</h3>
 <p>在概率与统计中，<strong>条件期望</strong> <span class="math inline">\(E(y|x)\)</span> 指的是在给定 <span class="math inline">\(x\)</span> 取某一值或落入某一区间时，<span class="math inline">\(y\)</span> 的平均值。具体来说：</p>
 <ul>
 <li>理论上，<span class="math inline">\(E(y|x)\)</span> 能完整反映 <span class="math inline">\(y\)</span> 随 <span class="math inline">\(x\)</span> 变化的均值趋势。这是理解 <span class="math inline">\(x\)</span> 如何影响 <span class="math inline">\(y\)</span> 的基础，也是回归、因果推断等分析的理论起点。</li>
@@ -1064,8 +1003,8 @@ Binned b        -0.234  0.112
 <p>Source: Stepner M. Binscatter: Binned scatterplots in stata[J]. StataConference, 2014. <a href="https://michaelstepner.com/binscatter/binscatter-StataConference2014.pdf">-PDF-</a></p>
 </blockquote>
 </section>
-<section id="图示" class="level3" data-number="32.3.2">
-<h3 data-number="32.3.2" class="anchored" data-anchor-id="图示"><span class="header-section-number">32.3.2</span> 图示</h3>
+<section id="图示" class="level3" data-number="22.3.2">
+<h3 data-number="22.3.2" class="anchored" data-anchor-id="图示"><span class="header-section-number">22.3.2</span> 图示</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1127,8 +1066,8 @@ Binned b        -0.234  0.112
 </div>
 </div>
 </section>
-<section id="条件期望的扩展考虑控制变量" class="level3" data-number="32.3.3">
-<h3 data-number="32.3.3" class="anchored" data-anchor-id="条件期望的扩展考虑控制变量"><span class="header-section-number">32.3.3</span> 条件期望的扩展（考虑控制变量）</h3>
+<section id="条件期望的扩展考虑控制变量" class="level3" data-number="22.3.3">
+<h3 data-number="22.3.3" class="anchored" data-anchor-id="条件期望的扩展考虑控制变量"><span class="header-section-number">22.3.3</span> 条件期望的扩展（考虑控制变量）</h3>
 <p>在多元分析中，我们关心 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> 的关系时，往往需要控制其他变量 <span class="math inline">\(z\)</span>，即关注 <span class="math inline">\(E(y|x, z)\)</span>。对应的多元回归模型通常设定为：</p>
 <p><span class="math display">\[
 y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
@@ -1138,8 +1077,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 <li>多数情况下，<span class="math inline">\(corr(x, z) \neq 0\)</span>，即 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(z\)</span> 之间存在相关性。这意味着 <span class="math inline">\(E(y|x, z) \neq E(y|x)\)</span>。因此，直接绘制 <span class="math inline">\(E(y|x)\)</span> 的分仓散点图无法反应 <span class="math inline">\(E(y|x, z)\)</span> 的真实关系。</li>
 </ul>
 <p>那么，如何在控制 变量 <span class="math inline">\(z\)</span> 的情况下估计 <span class="math inline">\(E(y|x, z)\)</span> 呢？</p>
-<section id="fwl-定理残差法" class="level4" data-number="32.3.3.1">
-<h4 data-number="32.3.3.1" class="anchored" data-anchor-id="fwl-定理残差法"><span class="header-section-number">32.3.3.1</span> FWL 定理（残差法）</h4>
+<section id="fwl-定理残差法" class="level4" data-number="22.3.3.1">
+<h4 data-number="22.3.3.1" class="anchored" data-anchor-id="fwl-定理残差法"><span class="header-section-number">22.3.3.1</span> FWL 定理（残差法）</h4>
 <ol type="1">
 <li>用 <span class="math inline">\(y\)</span> 对 <span class="math inline">\(z\)</span> 回归，得到残差 <span class="math inline">\(\tilde{y}\)</span>，即去除了 <span class="math inline">\(y\)</span> 中受 <span class="math inline">\(z\)</span> 影响的部分；</li>
 <li>用 <span class="math inline">\(x\)</span> 对 <span class="math inline">\(z\)</span> 回归，得到残差 <span class="math inline">\(\tilde{x}\)</span>，即去除了 <span class="math inline">\(x\)</span> 中受 <span class="math inline">\(z\)</span> 影响的部分；</li>
@@ -1163,18 +1102,18 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 </section>
 </section>
 </section>
-<section id="几个问题" class="level2" data-number="32.4">
-<h2 data-number="32.4" class="anchored" data-anchor-id="几个问题"><span class="header-section-number">32.4</span> 几个问题</h2>
-<section id="为何要采用等分组" class="level3" data-number="32.4.1">
-<h3 data-number="32.4.1" class="anchored" data-anchor-id="为何要采用等分组"><span class="header-section-number">32.4.1</span> 为何要采用等分组？</h3>
+<section id="几个问题" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="几个问题"><span class="header-section-number">22.4</span> 几个问题</h2>
+<section id="为何要采用等分组" class="level3" data-number="22.4.1">
+<h3 data-number="22.4.1" class="anchored" data-anchor-id="为何要采用等分组"><span class="header-section-number">22.4.1</span> 为何要采用等分组？</h3>
 <p>细心的读者可能已经注意到，在上述例子中，我们都采用了等分组的方式。即将 <span class="math inline">\(x\)</span> 的取值范围分为 <span class="math inline">\(G\)</span> 个相等的区间，每个区间内的样本数尽可能相同。这种方法有几个优点：</p>
 <ol type="1">
 <li><strong>均衡样本量</strong>：每组的样本数相近，避免某些组过于稀疏导致估计不稳定。</li>
 <li><strong>简化计算</strong>：由于每个组的样本数相同，当我们基于组均值进行回归时，无需调整权重或考虑样本量差异。如果以 <span class="math inline">\(x\)</span> 的取值范围进行分组，会导致每个组中的样本数都不同，那么用 <span class="math inline">\(\bar{y}_g\)</span> 与 <span class="math inline">\(\bar{x}_g\)</span> 进行回归时，就需要对每个组的样本量进行加权，计算复杂度会增加。</li>
 </ol>
 </section>
-<section id="如何选择-bins-的数量" class="level3" data-number="32.4.2">
-<h3 data-number="32.4.2" class="anchored" data-anchor-id="如何选择-bins-的数量"><span class="header-section-number">32.4.2</span> 如何选择 bins 的数量？</h3>
+<section id="如何选择-bins-的数量" class="level3" data-number="22.4.2">
+<h3 data-number="22.4.2" class="anchored" data-anchor-id="如何选择-bins-的数量"><span class="header-section-number">22.4.2</span> 如何选择 bins 的数量？</h3>
 <p>构建分仓散点图时，分仓数量（<span class="math inline">\(G\)</span>）的选择至关重要。分仓数较多时，可以更细致地揭示 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> 之间的非线性关系，但每个分组内的数据点变少，导致估计的方差增大，结果更易受偶然波动影响。反之，分仓数较少时，每组包含的数据点更多，估计更稳定，但可能掩盖了变量之间的复杂结构和非线性趋势。这实际上是“方差-偏差权衡”（variance-bias tradeoff）问题：<span class="math inline">\(G\)</span> 越大，偏差越小但方差越大；<span class="math inline">\(G\)</span> 越小，方差减小但偏差可能增大。因此，分仓数量的选择应结合样本量、变量分布和分析目标进行权衡与调整。</p>
 <p>在 Stepner (2014) 编写的 Stata 命令 <code>binscatter</code> 中，<span class="math inline">\(G\)</span> 的默认值为 20。Stepner 称，根据他的个人经验，这一数值的表现较好。</p>
 <p><a href="https://doi.org/10.1257/aer.20221576">Cattaneo</a> et al.&nbsp;(<a href="https://nppackages.github.io/references/Cattaneo-Crump-Farrell-Feng_2024_AER.pdf">2024</a>, AER) 的理论分析表明，使综合均方误差最小化的分仓数 <span class="math inline">\(G\)</span> 与 <span class="math inline">\(n^{1 /3}\)</span> 成正比 (<span class="math inline">\(n\)</span> 为样本数)。因此，观测值越大，<span class="math inline">\(G\)</span> 的取值越大。不过，其他因素也很重要。例如，保持 <span class="math inline">\(x\)</span> 的分布不变，<span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 之间的关系曲线越复杂，<span class="math inline">\(G\)</span> 的取值也应该越大 (否则均方误差会增加)。</p>
@@ -1207,8 +1146,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 <p>根据上表，多数情况下，取 <span class="math inline">\(G\)</span> 为 10-20 是合适的。对于大样本（如 <span class="math inline">\(n &gt; 10,000\)</span>），可以考虑增加到 30-50，但需要注意避免过拟合和噪音干扰。</p>
 </section>
 </section>
-<section id="python-实例" class="level2" data-number="32.5">
-<h2 data-number="32.5" class="anchored" data-anchor-id="python-实例"><span class="header-section-number">32.5</span> Python 实例</h2>
+<section id="python-实例" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="python-实例"><span class="header-section-number">22.5</span> Python 实例</h2>
 <p>在劳动经济学中，一个核心问题是：工人的工资 <span class="math inline">\(Y\)</span> 由什么因素决定？虽然这是一个因果推断问题，但我们可以先从预测的角度进行分析。</p>
 <p>在下面的工资案例中，<span class="math inline">\(Y\)</span> 表示工人的（对数）小时工资，<span class="math inline">\(X\)</span> 是工人的特征向量，例如教育、工作经验、性别等。这里我们关注两个主要问题：</p>
 <ul>
@@ -1216,15 +1155,15 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 <li>在其他工作相关特征 <span class="math inline">\(X\)</span> 相同的情况下，男性和女性工人的预测工资有何不同？</li>
 </ul>
 <p>本实验首先聚焦于预测问题。</p>
-<section id="数据说明" class="level3" data-number="32.5.1">
-<h3 data-number="32.5.1" class="anchored" data-anchor-id="数据说明"><span class="header-section-number">32.5.1</span> 数据说明</h3>
+<section id="数据说明" class="level3" data-number="22.5.1">
+<h3 data-number="22.5.1" class="anchored" data-anchor-id="数据说明"><span class="header-section-number">22.5.1</span> 数据说明</h3>
 <p>本次分析的数据来源于 2015 年美国现行人口调查（CPS）三月补充调查。我们筛选了 25 至 64 岁的白人非西班牙裔个体，要求每年工作超过 50 周且每周工作时间超过 35 小时。排除了自雇人员、居住在集体宿舍的个体、军人、农业或私人家庭部门的个体，以及在收入和就业状态报告上存在不一致、变量有缺失或分配信息的观测，同时剔除了小时工资低于 3 的样本。</p>
 <p>我们关注的核心变量 <span class="math inline">\(Y\)</span>，即（对数）小时工资率，是由年收入除以总工作小时数得到的。其中，总工作小时数等于每年工作周数乘以每周通常工作小时数。在分析中，我们还聚焦于未婚（从未结婚）工人。最终样本量为 <span class="math inline">\(n=5150\)</span>。</p>
 <blockquote class="blockquote">
 <p><strong>Source</strong>: Chernozhukov, V. &amp; Hansen, C. &amp; Kallus, N. &amp; Spindler, M. &amp; Syrgkanis, V. (<strong>2024</strong>): Applied Causal Inference Powered by ML and AI. <a href="https://causalml-book.org/">CausalML-book.org</a>; arXiv:2403.02467. <a href="https://arxiv.org/pdf/2403.02467">-PDF-</a>，<a href="https://causalml-book.org/">Website</a>, <a href="https://github.com/CausalAIBook/MetricsMLNotebooks">github</a> → <a href="https://github.com/CausalAIBook/MetricsMLNotebooks/blob/main/PM1/python-ols-and-lasso-for-wage-prediction.ipynb">This Note</a></p>
 </blockquote>
-<section id="变量标签与变量解释" class="level4" data-number="32.5.1.1">
-<h4 data-number="32.5.1.1" class="anchored" data-anchor-id="变量标签与变量解释"><span class="header-section-number">32.5.1.1</span> 变量标签与变量解释</h4>
+<section id="变量标签与变量解释" class="level4" data-number="22.5.1.1">
+<h4 data-number="22.5.1.1" class="anchored" data-anchor-id="变量标签与变量解释"><span class="header-section-number">22.5.1.1</span> 变量标签与变量解释</h4>
 <p>下面列示了该数据集中每个变量的常用英文标签及中文解释说明。部分变量根据 CPS 典型设定和相关代码本推断并补充。</p>
 <table class="caption-top table">
 <colgroup>
@@ -1343,8 +1282,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 </tbody>
 </table>
 </section>
-<section id="变量进一步解释和常见分组" class="level4" data-number="32.5.1.2">
-<h4 data-number="32.5.1.2" class="anchored" data-anchor-id="变量进一步解释和常见分组"><span class="header-section-number">32.5.1.2</span> 变量进一步解释和常见分组</h4>
+<section id="变量进一步解释和常见分组" class="level4" data-number="22.5.1.2">
+<h4 data-number="22.5.1.2" class="anchored" data-anchor-id="变量进一步解释和常见分组"><span class="header-section-number">22.5.1.2</span> 变量进一步解释和常见分组</h4>
 <ul>
 <li><p><strong>学历变量（shs, hsg, scl, clg, ad）</strong> 这些是<strong>互斥</strong>的 dummy 变量，每个人只能属于其中一个。常见定义如下：</p>
 <ul>
@@ -1363,8 +1302,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 </ul></li>
 </ul>
 </section>
-<section id="参考说明与代码本依据" class="level4" data-number="32.5.1.3">
-<h4 data-number="32.5.1.3" class="anchored" data-anchor-id="参考说明与代码本依据"><span class="header-section-number">32.5.1.3</span> 参考说明与代码本依据</h4>
+<section id="参考说明与代码本依据" class="level4" data-number="22.5.1.3">
+<h4 data-number="22.5.1.3" class="anchored" data-anchor-id="参考说明与代码本依据"><span class="header-section-number">22.5.1.3</span> 参考说明与代码本依据</h4>
 <p>这些变量的定义可参考 CPS（Current Population Survey）文档和相关学术论文，例如：</p>
 <ul>
 <li>Angrist, J. D., &amp; Pischke, J.-S. (2009). <em>Mostly Harmless Econometrics: An Empiricist’s Companion</em>. Princeton University Press. <a href="https://press.princeton.edu/books/paperback/9780691120355/mostly-harmless-econometrics">Link</a>, <a href="https://scholar.google.com/scholar?q=Mostly+Harmless+Econometrics">Google</a>.</li>
@@ -1372,8 +1311,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
 </ul>
 </section>
 </section>
-<section id="初步分析" class="level3" data-number="32.5.2">
-<h3 data-number="32.5.2" class="anchored" data-anchor-id="初步分析"><span class="header-section-number">32.5.2</span> 初步分析</h3>
+<section id="初步分析" class="level3" data-number="22.5.2">
+<h3 data-number="22.5.2" class="anchored" data-anchor-id="初步分析"><span class="header-section-number">22.5.2</span> 初步分析</h3>
 <div id="03277a21" class="cell" data-execution_count="98">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1400,8 +1339,8 @@ y_i = \alpha + \beta x_i + \gamma z_i + e_i \tag{1}
       dtype='object')</code></pre>
 </div>
 </div>
-<section id="变量生成及变量标签" class="level4" data-number="32.5.2.1">
-<h4 data-number="32.5.2.1" class="anchored" data-anchor-id="变量生成及变量标签"><span class="header-section-number">32.5.2.1</span> 变量生成及变量标签</h4>
+<section id="变量生成及变量标签" class="level4" data-number="22.5.2.1">
+<h4 data-number="22.5.2.1" class="anchored" data-anchor-id="变量生成及变量标签"><span class="header-section-number">22.5.2.1</span> 变量生成及变量标签</h4>
 <p>在本节中，我们将对数据集进行变量生成和标签定义，以便后续分析和建模。</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1484,10 +1423,10 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 </div>
 </section>
 </section>
-<section id="分仓散点图" class="level3" data-number="32.5.3">
-<h3 data-number="32.5.3" class="anchored" data-anchor-id="分仓散点图"><span class="header-section-number">32.5.3</span> 分仓散点图</h3>
-<section id="原始数据散点图wage-与-experience-的关系" class="level4" data-number="32.5.3.1">
-<h4 data-number="32.5.3.1" class="anchored" data-anchor-id="原始数据散点图wage-与-experience-的关系"><span class="header-section-number">32.5.3.1</span> 原始数据散点图：wage 与 experience 的关系</h4>
+<section id="分仓散点图" class="level3" data-number="22.5.3">
+<h3 data-number="22.5.3" class="anchored" data-anchor-id="分仓散点图"><span class="header-section-number">22.5.3</span> 分仓散点图</h3>
+<section id="原始数据散点图wage-与-experience-的关系" class="level4" data-number="22.5.3.1">
+<h4 data-number="22.5.3.1" class="anchored" data-anchor-id="原始数据散点图wage-与-experience-的关系"><span class="header-section-number">22.5.3.1</span> 原始数据散点图：wage 与 experience 的关系</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1539,8 +1478,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 </div>
 </div>
 </section>
-<section id="分仓散点图-1" class="level4" data-number="32.5.3.2">
-<h4 data-number="32.5.3.2" class="anchored" data-anchor-id="分仓散点图-1"><span class="header-section-number">32.5.3.2</span> 分仓散点图</h4>
+<section id="分仓散点图-1" class="level4" data-number="22.5.3.2">
+<h4 data-number="22.5.3.2" class="anchored" data-anchor-id="分仓散点图-1"><span class="header-section-number">22.5.3.2</span> 分仓散点图</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1624,8 +1563,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 <p>从图形来看，蓝色点代表每个经验分组的平均工资，橙色实线为原始数据的线性拟合，阴影区域为置信区间。整体趋势显示工资随经验增加而上升，但在经验大于 37 年的右侧区域，分组均值出现异常波动。这通常是因为高经验区间的样本数量较少，极端值对均值影响较大，导致均值点偏离主趋势。因此，右侧的异常点主要反映了数据稀疏和偶然波动，而非真实的工资-经验关系。</p>
 </section>
 </section>
-<section id="分仓非线性拟合线" class="level3" data-number="32.5.4">
-<h3 data-number="32.5.4" class="anchored" data-anchor-id="分仓非线性拟合线"><span class="header-section-number">32.5.4</span> 分仓非线性拟合线</h3>
+<section id="分仓非线性拟合线" class="level3" data-number="22.5.4">
+<h3 data-number="22.5.4" class="anchored" data-anchor-id="分仓非线性拟合线"><span class="header-section-number">22.5.4</span> 分仓非线性拟合线</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1721,8 +1660,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 <li>在数据分析中，我们应该将注意力放在「多数样本」上，因此，如果不考虑左侧的三个样本点 (工龄不足 5 年的样本) 和右侧的三个样本点 (工龄超过 40 年的样本)，工资与经验之间的关系大体上呈现出「倒 U 型关系」。这与我们的常识基本相符：工龄较短时，工资随着经验的增加而增加；工龄达到一定程度后，工资增长速度减缓甚至可能下降。</li>
 <li>更为重要的是，上述关系并未考虑其他变量的影响，因此我们需要进一步控制其他变量（如教育水平、性别等）来更准确地分析工资与经验之间的关系。</li>
 </ol>
-<section id="性别差异" class="level4" data-number="32.5.4.1">
-<h4 data-number="32.5.4.1" class="anchored" data-anchor-id="性别差异"><span class="header-section-number">32.5.4.1</span> 性别差异</h4>
+<section id="性别差异" class="level4" data-number="22.5.4.1">
+<h4 data-number="22.5.4.1" class="anchored" data-anchor-id="性别差异"><span class="header-section-number">22.5.4.1</span> 性别差异</h4>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1829,8 +1768,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 </div>
 </section>
 </section>
-<section id="去除控制变量的影响" class="level3" data-number="32.5.5">
-<h3 data-number="32.5.5" class="anchored" data-anchor-id="去除控制变量的影响"><span class="header-section-number">32.5.5</span> 去除控制变量的影响</h3>
+<section id="去除控制变量的影响" class="level3" data-number="22.5.5">
+<h3 data-number="22.5.5" class="anchored" data-anchor-id="去除控制变量的影响"><span class="header-section-number">22.5.5</span> 去除控制变量的影响</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1954,8 +1893,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 </div>
 </section>
 </section>
-<section id="小结" class="level2" data-number="32.6">
-<h2 data-number="32.6" class="anchored" data-anchor-id="小结"><span class="header-section-number">32.6</span> 小结</h2>
+<section id="小结" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="小结"><span class="header-section-number">22.6</span> 小结</h2>
 <p>本章介绍了分仓散点图的基本原理与绘制方法，并结合工资决定因素的例子，演示了其在 Python 中的实际应用。</p>
 <p>事实上，分仓散点图不仅是描述变量关系的直观工具，更在应用经济学和社会科学实证研究中具有重要意义。</p>
 <ul>
@@ -1966,8 +1905,8 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 </ul>
 <p>总体来看，分仓散点图作为连接理论分析、数据探索与实证模型设定的桥梁，已经成为现代数据分析和应用计量经济学研究中不可或缺的基础工具。</p>
 </section>
-<section id="参考文献" class="level2" data-number="32.7">
-<h2 data-number="32.7" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">32.7</span> 参考文献</h2>
+<section id="参考文献" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">22.7</span> 参考文献</h2>
 <ul>
 <li>Cattaneo, M. D., Jansson, M., &amp; Ma, X. (2022). binsreg: Estimating and validating binscatter estimators. The Stata Journal, 22(1), 65–99. <a href="https://doi.org/10.1177/1536867X221082097">Link</a>, <a href="http://sci-hub.ren/10.1177/1536867X221082097">PDF</a>, <a href="https://scholar.google.com/scholar?q=binsreg">Google</a>.</li>
 <li>Cattaneo, M. D., Crump, R. K., Farrell, M. H., &amp; Feng, Y. (2024). On Binscatter. American Economic Review, 114(5), 1488–1514.&nbsp;<a href="https://doi.org/10.1257/aer.20221576">Link</a>&nbsp;(rep),&nbsp;<a href="https://nppackages.github.io/references/Cattaneo-Crump-Farrell-Feng_2024_AER.pdf">PDF</a>,&nbsp;<a href="https://www.aeaweb.org/doi/10.1257/aer.20221576.appx">Appendix</a>,&nbsp;<a href="https://scholar.google.com/scholar?q=On%20Binscatter">Google</a>,&nbsp;<a href="https://www.openicpsr.org/openicpsr/project/195103/version/V1/view">-Replication-</a>.</li>
@@ -1983,247 +1922,241 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
       }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lianxhcn\.github\.io\/ds\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/lianxhcn\.github\.io\/ds\/");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2231,170 +2164,194 @@ ind2   5150.0  13.32   5.70  2.00   22.00</code></pre>
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../body/regress_02_wage.html" class="pagination-link" aria-label="线性回归分析">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">线性回归分析</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">线性回归分析</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../body/regress_04_wage_prediction.html" class="pagination-link" aria-label="线性回归分析">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">线性回归分析</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">线性回归分析</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
