@@ -2,7 +2,7 @@
 
 ## 提交
 
-- 提交链接：[点击提交作业](https://workspace.jianguoyun.com/inbox/collect/submit) 🍎
+- 提交链接：[点击提交作业](https://send2me.cn/JQP4AtjE/TVa8qKMHpUP3Kg) 🍎
 - 作业格式要求参见：[readme](https://github.com/arlionn/ds/blob/main/homework/readme.md)
 
 ---
