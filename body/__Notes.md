@@ -72,26 +72,11 @@
 
 ### TED 演讲数据
 - [TED talks](https://github.com/Chando0185/Multiverse_of_100-_data_science_project_series/tree/main/TED%20Talk)
-  - 记录 4467 条 TED 演讲的相关信息，包括七个变量 `ID`、`演讲者`、`标题`、`详情`、`发布时间`、`URL`、`观看次数`。
-  - 共三份数据：
-    - `tags_dataset.csv`：包含了每场演讲的标签信息，每条数据包含 `ID` 和 `标签` 两个变量。同一个 ID 下
+  - 记录 4467 条 TED 演讲的相关信息。
+  - 共三份数据 (约 15 MB)：
+    - `tags_dataset.csv`：包含了每场演讲的标签信息，每条数据包含 `ID` 和 `标签` 两个变量。同一个 ID 下有 5-7 个 Tags
     - `tedx_dataset.csv`：包含了每场演讲的相关信息，记录了 4467 条数据，每条数据包含 `ID`、`演讲者`、`标题`、`详情`、`发布时间`、`URL`、`观看次数` 七个变量。
-    - `watch_next_dataset.csv`：包含了每场演讲的相关信息，
+    - `watch_next_dataset.csv`：用户观看的下一个 TED 演讲的 URL 和 IDs。
+      - 共 77364 条记录。每个 ID 可能对应多个 URL 和 IDs，表示用户在观看了某个 TED 演讲后，接下来观看了哪些 TED 演讲。数值从 5-30 个不等。
 
-名称
-类型
-压缩大小
-密码保护
-大小
-tags＿dataset．csv
-Comma Separated Valu．．．
-267 KB 否
-$1,732 \mathrm{~KB}$
-tedx＿dataset．csv
-Comma Separated Valu．．．
-968 KB 否
-$2,355 \mathrm{~KB}$
-watch＿next＿dataset．csv
-Comma Separated Valu．．．
-$1,412 \mathrm{~KB}$ 否
-$10,509 \mathrm{~KB}$
+

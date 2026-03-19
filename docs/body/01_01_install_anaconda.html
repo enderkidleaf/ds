@@ -534,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#配置步骤" id="toc-配置步骤" class="nav-link" data-scroll-target="#配置步骤"><span class="header-section-number">4.3.1</span> 配置步骤</a></li>
   <li><a href="#补充说明" id="toc-补充说明" class="nav-link" data-scroll-target="#补充说明"><span class="header-section-number">4.3.2</span> 补充说明</a></li>
   <li><a href="#nbstata-扩展信息" id="toc-nbstata-扩展信息" class="nav-link" data-scroll-target="#nbstata-扩展信息"><span class="header-section-number">4.3.3</span> nbstata 扩展信息</a></li>
-  <li><a href="#nbstata-安装和使用常见问题" id="toc-nbstata-安装和使用常见问题" class="nav-link" data-scroll-target="#nbstata-安装和使用常见问题"><span class="header-section-number">4.3.4</span> nbstata 安装和使用常见问题</a></li>
+  <li><a href="#nbstata-安装和使用常见问题" id="toc-nbstata-安装和使用常见问题" class="nav-link" data-scroll-target="#nbstata-安装和使用常见问题"><span class="header-section-number">4.3.4</span> nbstata 安装和使用常见问题 🍎</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -575,9 +575,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>直接使用 Anaconda 中的 Python 环境即可。</li>
 <li>不要单独安装 Python 3.12 / 3.13。</li>
+<li>如果你不使用 Stata，可以跳过 Stata 相关的内容，如 <code>nbstata</code> 插件。</li>
 </ul>
 </div>
 </div>
+<p>在开始安装 Python 之前，首先要明确自己需要使用 Python 来做什么。Python 是一门功能强大的编程语言，广泛应用于数据分析、机器学习、人工智能、网络开发等领域。根据你的需求，选择合适的工具和环境进行安装和配置。</p>
 <p>对于初学者来讲，建议安装 Anaconda 套装。它是一个开源的 Python 发行版，集成了 Python 解释器、包管理器 Conda 和许多常用的科学计算和数据分析库（如 NumPy、Pandas、Matplotlib 等）。</p>
 <p>虽然 Anaconda 自带的编辑器 Jupyter Notebook 很好用，但如果你平时经常用 VScode 写东西，建议安装 <a href="https://www.lianxh.cn/details/1174.html">VScode</a> 作为编辑器。VScode 支持多种编程语言，可以安装各种插件来增强功能。对于编写 Python 代码而言，仅需安装 <code>python</code> 和 <code>jupyter</code> 插件就可以满足基本需求。</p>
 <p>网上有不少关于 Anaconda 和 VScode 的安装和配置的教程，如：</p>
@@ -686,10 +688,30 @@ VScode 及插件的安装和使用
 </ol>
 <section id="vscode-插件" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="vscode-插件"><span class="header-section-number">4.2.1</span> VScode 插件</h3>
-<p><strong>插件安装方法</strong>：点击图中的 <code>四个小方块</code> 图标，在搜索框中填入插件名称，点击 <code>Install</code> 即可。</p>
-<p>详情参见 <a href="https://www.lianxh.cn/details/1490.html">VScode 插件：安装、配置和使用</a></p>
+<p><strong>插件安装方法</strong>：点击图中的 <code>四个小方块</code> 图标 (<code>Ctrl+Shift+X</code>)，在搜索框中填入插件名称，点击 <code>Install</code> 即可。</p>
+<p>详情参见 <a href="https://www.lianxh.cn/details/1490.html">VScode 插件：安装、配置和使用</a>。</p>
 <p><img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20250516181811.png" class="img-fluid" width="700"></p>
 <p>为了能在 VScode 中借助 Jupyter Notebook 中同时运行 Python 和 Stata 代码，我们需要安装 <code>python</code>, <code>Jupyter</code>, <code>nbstata</code>, <code>Copilot</code> 等插件，具体说明如下。</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示词
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>{要点：} 新用户 (不确定哪个插件比较好用) 常常安装很多插件，结果导致 VScode 运行缓慢，彼此冲突、甚至崩溃。建议如下：</p>
+<ul>
+<li>预先通过网络搜索和自选 AI，了解每个插件的功能和用途，选择最适合自己需求的插件。</li>
+<li>安装插件后，建议重启 VScode，以确保插件正确加载和运行。</li>
+<li>如果安装插件后 VScode 运行缓慢，可以尝试禁用一些不常用的插件 (点击插件名称右侧的齿轮图标，选择 <code>Disable</code>)。</li>
+<li>完成某项任务时，可以先临时禁用一些不相关的插件，以提高 VScode 的性能和响应速度。</li>
+<li>当有些插件自动更新后，插件图标会显示一个小更新标志，必要时还需点击 <code>restart</code> 来重启插件。</li>
+</ul>
+</div>
+</div>
 <section id="python-和-jupyter-插件" class="level4" data-number="4.2.1.1">
 <h4 data-number="4.2.1.1" class="anchored" data-anchor-id="python-和-jupyter-插件"><span class="header-section-number">4.2.1.1</span> Python 和 Jupyter 插件</h4>
 <p>为了能够在 VScode 中使用 Jupyter Notebook 运行 Python 代码，并借助 AI 提升工作效率，你需要安装以下插件：</p>
@@ -722,7 +744,6 @@ VScode 及插件的安装和使用
 </div>
 </div>
 <p>VScode 插件市场提供了诸多 Python 相关的插件，可以酌情安装，详见：<a href="https://www.lianxh.cn/details/1489.html">VScode：实用 Python 插件清单</a>。</p>
-<p>比如，我装了如下插件 - <code>Data Wrangler</code> (可选)：表格呈现效果很美观</p>
 </section>
 <section id="markdown-插件" class="level4" data-number="4.2.1.2">
 <h4 data-number="4.2.1.2" class="anchored" data-anchor-id="markdown-插件"><span class="header-section-number">4.2.1.2</span> Markdown 插件</h4>
@@ -730,16 +751,41 @@ VScode 及插件的安装和使用
 <ul>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">Markdown Preview Enhanced</a></li>
-<li>Marp (制作<a href="https://www.lianxh.cn/search.html?s=marp">幻灯片</a>)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode">Marp</a> (制作<a href="https://www.lianxh.cn/search.html?s=marp">幻灯片</a>)</li>
 </ul>
 <p>若想较为全面的了解 Markdown 类插件，可参阅 <a href="https://www.lianxh.cn/details/1390.html">VScode：实用 Markdown 插件推荐</a>。</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-paste">Markdown Paste</a> (可选)：可以将剪贴板中的内容直接粘贴为 Markdown 格式，支持表格、图片等多种格式的转换。快捷键为：<code>Ctrl + Shift + V</code> (Windows) 或 <code>Cmd + Shift + V</code> (Mac)。</li>
+</ul>
 <p>你也可以点击 VScode 左边栏中的 <code>四个小方块</code> 图标，在搜索框中输入 <code>markdown</code>，酌情安装其他插件。</p>
 </section>
-<section id="stata-插件" class="level4" data-number="4.2.1.3">
-<h4 data-number="4.2.1.3" class="anchored" data-anchor-id="stata-插件"><span class="header-section-number">4.2.1.3</span> Stata 插件</h4>
-<p>在 VScode 的扩展搜索框中搜索 <code>stata</code>，安装如下插件：</p>
+<section id="其他插件" class="level4" data-number="4.2.1.3">
+<h4 data-number="4.2.1.3" class="anchored" data-anchor-id="其他插件"><span class="header-section-number">4.2.1.3</span> 其他插件</h4>
+<p>根据个人需求，可以安装其他插件来增强 VScode 的功能，比如：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=DataWrangler">Data Wrangler</a> (可选)：表格呈现效果很美观。</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv">Rainbow CSV</a> (by <em>mechatroner</em>) 和 <a href="https://marketplace.visualstudio.com/items?itemName=ReprEng.csv">CSV</a> (by <em>ReprEng</em>)：CSV 文件的高亮显示和表格预览功能很棒。</li>
+</ul>
+</section>
+<section id="stata-插件" class="level4" data-number="4.2.1.4">
+<h4 data-number="4.2.1.4" class="anchored" data-anchor-id="stata-插件"><span class="header-section-number">4.2.1.4</span> Stata 插件</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+提示！
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>如果你不使用 Stata，可以跳过此节。</p>
+</div>
+</div>
+<p>如果你需要在 VScode 中使用 Stata，可以在 VScode 的扩展搜索框中搜索 <code>stata</code>，安装如下插件：</p>
 <ul>
 <li><code>Stata Enhanced</code> (作者：Kyle Barron)：语法高亮支持；</li>
+<li><code>Stata MCP</code> (作者：Kyle Barron)：提供了一个交互式的 Stata 命令面板，可以直接在 VScode 中输入 Stata 命令并执行，支持命令历史记录和自动补全功能。</li>
 <li><code>stataRun</code> (作者：Yeaoh Media Inc)：用于建立 VScode 和 Stata 的后台关联。</li>
 </ul>
 <p>要顺利运行 Stata 代码，还需要安装 <code>nbstata</code> 包，下文将详细介绍。</p>
@@ -774,6 +820,7 @@ VScode 及插件的安装和使用
 <ul>
 <li>有些用户使用的不是官方发布的 Stata 版本，或没有正确完成安装程序，都会导致该文件缺失，从而导致 <code>nbstata</code> 无法正常工作。</li>
 </ul></li>
+<li><code>nbstata</code> 是在 Python 3.12 版本下开发和测试的，如果你在 Python 3.13 或更高版本环境下安装了 <code>nbstata</code>，可能会遇到兼容性问题，导致无法正常使用。因此，建议大家创建一个专属于 Stata 的虚拟环境。详情参见 <strong>nbstata 安装和使用常见问题 🍎</strong> 小节。</li>
 </ul>
 <section id="配置步骤" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="配置步骤"><span class="header-section-number">4.3.1</span> 配置步骤</h3>
@@ -789,13 +836,13 @@ VScode 及插件的安装和使用
 <div class="callout-body-container callout-body">
 <ul>
 <li>下面的配置步骤需要在 VS Code 的终端中完成，而不是在 Jupyter Notebook 中。</li>
-<li>打开 VS Code 的终端的方式参见 <a href="02_install_FAQs.html">5. Python 安装常见问题</a> → <code>5.5 小节</code>。</li>
+<li>打开 VS Code 的终端的快捷键为 <code>Ctrl + ~</code>。详见 <a href="01_03_install_FAQs.html">Python 安装常见问题</a>。</li>
 <li>如果按下面的方法无法配置成功，可以参阅 <a href="https://hugetim.github.io/nbstata/user_guide.html">nbstata User Guide</a> 和 <a href="https://industry.pengxianzhe.org/posts/jupyter-stata/#sec-vscode">Jupyter + Stata 配置方法</a> (第 4 小节)。也可以打开 <a href="https://www.douban.com/group/topic/297885930/">豆包</a>，把你的错误代码截图和粘贴给它，多数情况下你都能在它的引导下完成配置。</li>
 <li>我的学生倪璐同学写了一份详细的笔记，也可以参考：<a href="https://github.com/arlionn/Financial-Econometrics/blob/main/FAQs/How-to-create-a-Stata-code-cell_by-NiLu.md">如何在 VScode 的 Jupyter Notebook 中创建 Stata 代码单元</a>。</li>
 </ul>
 </div>
 </div>
-<p>首先，打开 VS Code 的<strong>终端</strong> (参见 <a href="02_install_FAQs.html">5. Python 安装常见问题</a> → <code>5.5 小节</code>)，依次执行以下命令：</p>
+<p>按快捷键 <code>Ctrl + ~</code> 打开 VS Code 的<strong>终端</strong>，依次执行以下命令：</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nbstata</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> nbstata.install <span class="at">--conf-file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -812,28 +859,50 @@ VScode 及插件的安装和使用
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>echo <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> .</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>browse_auto_height <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>完成上述配置后，<code>nbstata</code> 就可以在 VS Code 的 <code>.ipynb</code> 文件中运行 Stata 代码了 (参见下方的 <strong>测试</strong> 提示框)。如果受阻，可以尝试按如下方式修改 <code>nbstata.conf</code> 文件：</p>
-<ul>
-<li><p>在 Stata 命令窗口中输入 <code>sysdir</code> 命令，结果中第一行显示的就是 Stata 的安装路径 (因人而异)：</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>. <span class="ot">sysdir</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">STATA</span>:  D:\stata17\</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>复制 <code>D:\stata17\</code>，填入 <code>nbstata.conf</code> 文件的 <code>stata_dir</code> 字段中 (有时需要把反斜杠 <code>\</code> 改成斜杠 <code>/</code>)。</p></li>
-<li><p>进入 <code>D:\stata17\</code> 目录可以查看 Stata 的版本类型，如 <code>StataMP-64.exe</code>、<code>StataSE-64.exe</code> 或 <code>StataIC-64.exe</code>。根据你的 Stata 版本，对照修改 <code>nbstata.conf</code> 文件中 <code>edition</code> 字段的值为 <code>mp</code>、<code>se</code> 或 <code>ic</code>。</p></li>
-</ul>
+<p>完成上述配置后，<code>nbstata</code> 就可以在 VS Code 的 <code>.ipynb</code> 文件中运行 Stata 代码了。</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-测试
+借助 nbstata 运行 Stata 命令
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li>打开或新建一个 <code>.ipynb</code> 文件；</li>
-<li>点击 <code>+ Codes</code> 按钮，创建一个新的代码单元格，指定 Kernel 为 <strong>Stata (nbstata)</strong>，输入 <code>display 2 + 2</code>。</li>
+<li>点击右上角的 <strong>Select Kernel</strong> 下拉菜单，指定 Kernel 为 <strong>Stata (nbstata)</strong>。
+<ul>
+<li>若清单中没有显示 <strong>Stata (nbstata)</strong>，可以点击 <code>+ Select Another Kernel</code>，在弹出的窗口中选择 <strong>Stata (nbstata)</strong>。
+<ul>
+<li>若此时仍然没有显示 <strong>Stata (nbstata)</strong>，可以点击 <code>Jupyter Kernels</code>，在弹出的窗口中选择 <strong>Stata (nbstata)</strong>。</li>
+</ul></li>
+</ul></li>
+<li>点击 <code>+ Codes</code> 按钮，创建一个新的代码单元格，输入 <code>display 2 + 2</code>。</li>
 <li>按快捷键 <code>Shift + Enter</code> 或点击单元格左上角的 <code>Run</code> 按钮，若输出 <code>4</code>，说明配置成功。</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+无法运行？
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>常见表现是执行命令后显示错误信息或代码块左下角一直在转圈，但始终无法执行。这有可能是 Stata 的安装路径或版本类型没有正确配置导致的。</p>
+<p>可以尝试按如下方式修改 <code>nbstata.conf</code> 文件：</p>
+<ul>
+<li><p><strong>确认 Stata 的安装路径</strong>。在 <strong>Stata 命令窗口</strong>中输入 <code>sysdir</code> 命令，结果中第一行显示的就是 Stata 的安装路径 (因人而异)：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>. <span class="ot">sysdir</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">STATA</span>:  D:\stata17\</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>复制 <code>D:\stata17\</code>，填入 <code>nbstata.conf</code> 文件的 <code>stata_dir</code> 字段中 (有时需要把反斜杠 <code>\</code> 改成斜杠 <code>/</code>)。</p></li>
+<li><p><strong>确认 Stata 的版本类型</strong>。进入 <code>D:\stata17\</code> 目录可以查看 Stata 的版本类型，如 <code>StataMP-64.exe</code>、<code>StataSE-64.exe</code> 或 <code>StataIC-64.exe</code>。根据你的 Stata 版本，对照修改 <code>nbstata.conf</code> 文件中 <code>edition</code> 字段的值为 <code>mp</code>、<code>se</code> 或 <code>ic</code>。</p></li>
+<li><p><strong>修改图形输出格式</strong>。如果上述两点都确认无误，但仍然无法使用 <code>twoway</code> 绘图。可以尝试修改 <code>nbstata.conf</code> 文件中的 <code>graph_format</code> 字段的值为 <code>svg</code> 或 <code>pystata</code>，保存后重启 VS Code 或当前 Notebook 的 kernel，再重新运行代码。</p></li>
 </ul>
 </div>
 </div>
@@ -873,7 +942,7 @@ VScode 及插件的安装和使用
 </ul>
 </section>
 <section id="nbstata-安装和使用常见问题" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="nbstata-安装和使用常见问题"><span class="header-section-number">4.3.4</span> nbstata 安装和使用常见问题</h3>
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="nbstata-安装和使用常见问题"><span class="header-section-number">4.3.4</span> nbstata 安装和使用常见问题 🍎</h3>
 <section id="stata-升级后如何修改配置" class="level4" data-number="4.3.4.1">
 <h4 data-number="4.3.4.1" class="anchored" data-anchor-id="stata-升级后如何修改配置"><span class="header-section-number">4.3.4.1</span> Stata 升级后如何修改配置？</h4>
 <p>如果你在 Stata 17 版本下配置了 <code>nbstata</code>，但后来升级到了 Stata 18 或更高版本，你需要修改 <code>nbstata.conf</code> 文件中的 <code>stata_dir</code> 和 <code>edition</code> 字段，以匹配新的 Stata 安装路径和版本类型。假设你安装了 Stata 19 SE 版本，并且安装路径为 <code>D:\stata19</code>，你可以按照上文介绍的方式打开 <code>nbstata.conf</code> 文件，并修改相关字段：</p>
@@ -883,25 +952,57 @@ VScode 及插件的安装和使用
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>……</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>完成后，保存文件并重新启动 VS Code，即可在新的 Stata 版本下使用 <code>nbstata</code>。</p>
 </section>
-<section id="kernel-损坏了应该怎么修复" class="level4" data-number="4.3.4.2">
-<h4 data-number="4.3.4.2" class="anchored" data-anchor-id="kernel-损坏了应该怎么修复"><span class="header-section-number">4.3.4.2</span> kernel 损坏了应该怎么修复？</h4>
+<section id="nbstata-无法输出图形" class="level4" data-number="4.3.4.2">
+<h4 data-number="4.3.4.2" class="anchored" data-anchor-id="nbstata-无法输出图形"><span class="header-section-number">4.3.4.2</span> nbstata 无法输出图形</h4>
+<p>若 <code>display 2 + 2</code> 可以正常运行，但一执行 <code>twoway scatter mpg weight</code>、<code>histogram price</code> 等绘图命令就报错。典型报错信息如下：</p>
+<blockquote class="blockquote">
+<p><span style="color:red">java.lang.UnsatisfiedLinkError:<br>D:-x64-jdk1.10.10.dll:<br>找不到指定的程序</span></p>
+</blockquote>
+<p>这通常是 <code>nbstata</code> 的图形输出格式配置有问题，而非 Stata 命令本身出错。</p>
+<p>此时可打开 <code>nbstata.conf</code> 文件，将 <code>graph_format = png</code> 改为 <code>graph_format = svg</code> 或 <code>graph_format = pystata</code>，保存后重启 VS Code 或当前 Notebook 的 kernel，再重新运行绘图代码。若图形可以正常显示，则说明问题已解决。</p>
+<blockquote class="blockquote">
+<p>Note：如何打开 <code>nbstata.conf</code> 文件？</p>
+</blockquote>
+<ul>
+<li>按快捷键 <code>Ctrl + ~</code> 打开终端，运行如下代码： <code>python -m nbstata.install --conf-file</code><br>
+记下返回的 <code>nbstata.conf</code> 文件路径，如 <code>C:\Users\Administrator\.config\nbstata\nbstata.conf</code>；</li>
+<li>然后在 VS Code 中依次点击 <code>File</code> → <code>Open File...</code>，打开该文件。</li>
+</ul>
+<p><strong>图片的保存</strong></p>
+<p>在 <code>nbstata.conf</code> 文件中设定 <code>graph_format = svg</code> 后，则使用 <code>graph export</code> 导出图片时，文件后缀应写为 <code>.svg</code>，例如</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">graph</span> <span class="kw">export</span> <span class="st">"Fig02.svg"</span>, <span class="kw">width</span>(300) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>简言之，<code>nbstata.conf</code> 中设置的图片格式应于 Stata 命令中 <code>graph export</code> 的文件后缀保持一致，否则会报错。</p>
+<p>若想将图片保存为 <code>.png</code> 或 <code>.pdf</code> 格式，有如下几种方式：</p>
+<ul>
+<li><p><strong>手动另存</strong>：在 Notebook 中生成图形后，直接点击图形右上角的图标，手动另存为 <code>PDF</code>、<code>png</code> 或 <code>svg</code> 格式。</p></li>
+<li><p><strong>本地转换</strong>：先用 <code>graph export</code> 导出为 <code>.svg</code>，再在本地转换为其他格式。例如，可在终端中使用 ImageMagick： <code>bash  magick Fig02.svg Fig02.png  magick Fig02.svg Fig02.pdf</code> 若电脑已安装 Inkscape，也可以使用：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">inkscape</span> Fig02.svg <span class="at">--export-type</span><span class="op">=</span>png</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">inkscape</span> Fig02.svg <span class="at">--export-type</span><span class="op">=</span>pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="kernel-损坏了应该怎么修复" class="level4" data-number="4.3.4.3">
+<h4 data-number="4.3.4.3" class="anchored" data-anchor-id="kernel-损坏了应该怎么修复"><span class="header-section-number">4.3.4.3</span> kernel 损坏了应该怎么修复？</h4>
 <p>有些情况下，安装了新的 Python 包后，可能会导致 <code>ipykernel</code> 包损坏，并导致你无法选择 <code>Stata (nbstata)</code> 作为内核，或者选择后无法运行 Stata 代码。通常会以红色字体显示如下信息：</p>
 <blockquote class="blockquote">
 <p><span style="color:red">无法启动 Kernel.<br>有关更多详细信息，请查看 Jupyter log.</span></p>
 </blockquote>
 <p>你可以尝试重新安装 <code>ipykernel</code> 包来修复这个问题。打开 VS Code 的终端，输入以下命令：</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install ipykernel <span class="at">-U</span> <span class="at">--force-reinstall</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install ipykernel <span class="at">-U</span> <span class="at">--force-reinstall</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>其中，<code>-U</code> 表示升级到最新版本，<code>--force-reinstall</code> 表示强制重新安装。安装完成后，重新启动 VS Code，并尝试选择 <code>Stata (nbstata)</code> 作为内核，看看问题是否解决。</p>
-<p>更为安全的解决方法是，创建一个新的虚拟环境，并在其中安装 <code>nbstata</code> 和 <code>ipykernel</code>。这样可以避免与其他项目的依赖冲突。你可以按照以下步骤操作： 1. 打开 VS Code 的终端，输入以下命令创建一个新的虚拟环境（假设你使用的是 Conda）：</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> nbstata_env python=3.12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
+</section>
+<section id="创建新的虚拟环境" class="level4" data-number="4.3.4.4">
+<h4 data-number="4.3.4.4" class="anchored" data-anchor-id="创建新的虚拟环境"><span class="header-section-number">4.3.4.4</span> 创建新的虚拟环境</h4>
+<p><code>nbstata</code> 是在 Python 3.12 版本下开发和测试的，如果你在 Python 3.13 环境下安装了 <code>nbstata</code>，可能会遇到兼容性问题，导致无法正常使用。因此，我强烈建议各位创建一个新的虚拟环境，并在其中安装 <code>nbstata</code> 和 <code>ipykernel</code>。这样可以避免与其他项目的依赖冲突。你可以按照以下步骤操作 (这里以 Conda 为例)：</p>
+<ol type="1">
+<li><p>打开 VS Code 的终端，输入以下命令创建一个新的虚拟环境（假设你使用的是 Conda）：</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> nbstata_env python=3.12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>激活新的虚拟环境：</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate nbstata_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate nbstata_env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>在新的虚拟环境中安装 <code>nbstata</code> 和 <code>ipykernel</code>：</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install nbstata ipykernel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install nbstata ipykernel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>重新启动 VS Code，并在 <code>.ipynb</code> 文件中选择 <code>Stata (nbstata)</code> 作为内核。</p></li>
 <li><p>切换回原来的环境：</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -914,8 +1015,8 @@ VScode 及插件的安装和使用
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>安装过程中可能会遇到各种小挫折，参见 <a href="02_install_FAQs.html">Python 安装常见问题</a>。</li>
-<li>完成上述环境配置后，就可以使用 Jupyter Notebook 编写代码了，参见 <a href="01_use_Jupyter_Notebook.html">Jupyter Notebook 的使用</a>。</li>
+<li>安装过程中可能会遇到各种小挫折，参见 <a href="01_03_install_FAQs.html">Python 安装常见问题</a>。</li>
+<li>完成上述环境配置后，就可以使用 Jupyter Notebook 编写代码了，参见 <a href="01_02_jupyter_notebook.html">Jupyter Notebook 的使用</a>。</li>
 </ul>
 </div>
 </div>
