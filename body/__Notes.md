@@ -12,9 +12,8 @@
 
 ## Bayes
 
-- Peter D. HoffA First Course in
-Bayesian Statistical
-Methods   https://sites.math.rutgers.edu/~zeilberg/EM20/Hoff.pdf
+- Peter D. HoffA First Course in Bayesian Statistical Methods  
+  - https://sites.math.rutgers.edu/~zeilberg/EM20/Hoff.pdf
 - Bayesian Data Analysis course - Demos
   - https://avehtari.github.io/BDA_course_Aalto/demos.html#BDA_Python_demos
 
@@ -68,7 +67,31 @@ Methods   https://sites.math.rutgers.edu/~zeilberg/EM20/Hoff.pdf
       road=文一西路road_number=969号 poi=淘宝城 
       house_number=5号楼 other=，放前台
       ```
-  - [数据分析达人赛1:用户情感可视化分析](https://tianchi.aliyun.com/competition/entrance/531890/information)    
-    - 数据源： earphone_sentiment.csv，为10000+条行业用户关于耳机的评论
-  - [中文简历筛选数据集（部分IT行业）](https://tianchi.aliyun.com/dataset/201566)
-    - 本数据集是模拟生成的结构化简历数据，共包含 5000 条记录，旨在为简历评估筛选相关提供数据支持，且通过特定评估指标对每份简历进行了 “通过” 或 “不通过” 的标注。 数据包含 34 个字段，涵盖了简历的多方面信息。其中，基本信息类字段有简历编号（唯一标识每份简历）、姓名、性别、年龄、电话和邮箱。求职意向类包括意向岗位，涉及算法工程师、测试工程师等十种岗位。教育背景类有学历层次（如本科）、院校类别（如普通高校）、专业类别（如计算机类）和英语水平（如英语四级）。 技能相关字段众多，如编程语言（Java、Python 等）及其熟练度。此外，还细分了不同技术领域的技能，像前端技术、后端技术、数据库等，以及各自对应的熟练度。 工作经验方面，区分了小型企业工作经验、中型企业工作经验和大型企业工作经验，用不同时间段表示。项目经验则通过小规模项目、中规模项目和大规模项目的数量来体现。 最终的筛选结果字段，明确标注了每份简历是否通过评估筛选，这对于构建简历筛选模型、分析影响简历通过与否的关键因素等工作具有重要价值。同时，为确保隐私安全，这些数据均为模拟生成，不涉及真实个人信息。
+
+## 文本分析
+
+### TED 演讲数据
+- [TED talks](https://github.com/Chando0185/Multiverse_of_100-_data_science_project_series/tree/main/TED%20Talk)
+  - 记录 4467 条 TED 演讲的相关信息，包括七个变量 `ID`、`演讲者`、`标题`、`详情`、`发布时间`、`URL`、`观看次数`。
+  - 共三份数据：
+    - `tags_dataset.csv`：包含了每场演讲的标签信息，每条数据包含 `ID` 和 `标签` 两个变量。同一个 ID 下
+    - `tedx_dataset.csv`：包含了每场演讲的相关信息，记录了 4467 条数据，每条数据包含 `ID`、`演讲者`、`标题`、`详情`、`发布时间`、`URL`、`观看次数` 七个变量。
+    - `watch_next_dataset.csv`：包含了每场演讲的相关信息，
+
+名称
+类型
+压缩大小
+密码保护
+大小
+tags＿dataset．csv
+Comma Separated Valu．．．
+267 KB 否
+$1,732 \mathrm{~KB}$
+tedx＿dataset．csv
+Comma Separated Valu．．．
+968 KB 否
+$2,355 \mathrm{~KB}$
+watch＿next＿dataset．csv
+Comma Separated Valu．．．
+$1,412 \mathrm{~KB}$ 否
+$10,509 \mathrm{~KB}$
