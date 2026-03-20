@@ -610,7 +610,11 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>请帮我写一段适合初学者的 Python 代码，实现下面这个任务：从 https://www.globalmacrodata.com/GMD.csv 在线读取一个较大的 CSV 文件，把它保存到 data/GMD.csv，再从本地重新读取，并输出全部列名。请使用 pandas 和 os，设置工作路径为 D:_lianxh，加上简洁的中文注释。</p>
+<p>请帮我写一段适合初学者的 Python 代码，实现下面这个任务：</p>
+<ul>
+<li>从 https://www.globalmacrodata.com/GMD.csv 在线读取一个较大的 CSV 文件，把它保存到 data/GMD.csv，再从本地重新读取，并输出全部列名。</li>
+<li>请使用 pandas 和 os，设置工作路径为 D:_lianxh，加上简洁的中文注释。</li>
+</ul>
 </div>
 </div>
 <div id="357947db" class="cell" data-execution_count="1">
@@ -702,8 +706,23 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>你是 Python 数据分析助手。请基于当前 Jupyter Notebook 已有变量直接生成“下一个代码单元”的代码（不要重复 import 已存在模块，不要重新读取 data）。</p>
-<p>已知变量： - data: 包含宏观数据的 DataFrame - cname: ‘{cname}’（国家代码） - var: ‘{var}’（目标变量） - vlist: {vlist}</p>
-<p>请完成： 1. 从 data 中筛选 ISO3 == cname 的样本； 2. 保留 year 在 1978~2024 的数据； 3. 仅针对 var 绘制一张清晰的时间序列折线图； 4. 自动处理缺失值（绘图前剔除 year 或 var 缺失）； 5. 图中包含标题、坐标轴标签、网格、图例； 6. 设置合适的 figsize 与 xticks（每 5 年一个刻度，标签可旋转）； 7. 代码简洁、可直接运行，仅输出代码，不要解释文字。</p>
+<p>已知变量：</p>
+<ul>
+<li>data: 包含宏观数据的 DataFrame</li>
+<li>cname: ‘{cname}’（国家代码）</li>
+<li>var: ‘{var}’（目标变量）</li>
+<li>vlist: {vlist}</li>
+</ul>
+<p>请完成：</p>
+<ol type="1">
+<li>从 data 中筛选 ISO3 == cname 的样本；</li>
+<li>保留 year 在 1978~2024 的数据；</li>
+<li>仅针对 var 绘制一张清晰的时间序列折线图；</li>
+<li>自动处理缺失值（绘图前剔除 year 或 var 缺失）；</li>
+<li>图中包含标题、坐标轴标签、网格、图例；</li>
+<li>设置合适的 figsize 与 xticks（每 5 年一个刻度，标签可旋转）；</li>
+<li>代码简洁、可直接运行，仅输出代码，不要解释文字。</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -716,8 +735,9 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>请帮我写一段适合初学者的 Python 代码，演示如何从 <code>data</code> 这个 DataFrame 中筛选中国 <code>CHN</code> 在 <code>1978-2024</code> 年的数据，并使用 <code>matplotlib</code> 绘制时序图。<br>
-要求先画 <code>inv_GDP</code> 的单变量时序图，再画 <code>inv_GDP</code>、<code>exports_GDP</code>、<code>imports_GDP</code> 和 <code>govexp_GDP</code> 的多变量时序图。请加上简洁的中文注释，代码要适合写进讲义。</p>
+<p>请帮我写一段适合初学者的 Python 代码，演示如何从 <code>data</code> 这个 DataFrame 中筛选中国 <code>CHN</code> 在 <code>1978-2024</code> 年的数据，并使用 <code>matplotlib</code> 绘制时序图。</p>
+<p>要求先画 <code>inv_GDP</code> 的单变量时序图，再画 <code>inv_GDP</code>、<code>exports_GDP</code>、<code>imports_GDP</code> 和 <code>govexp_GDP</code> 的多变量时序图。</p>
+<p>请加上简洁的中文注释，代码要适合写进讲义。</p>
 </div>
 </div>
 <div id="68ac4713" class="cell" data-execution_count="2">
@@ -1294,11 +1314,16 @@ window.Quarto = {
 <p><span class="math display">\[
 \text{export\_share} = \frac{\text{exports\_USD}}{\text{total\_exports}} \times 100
 \]</span></p>
-<p>其中： - <code>exports_USD</code> 是该国家的出口额（以美元计价）。 - <code>total_exports</code> 是当年全球所有国家的出口总额（以美元计价）。 - 结果乘以 100，将比例转换为百分比。</p>
+<p>其中：</p>
+<ul>
+<li><code>exports_USD</code> 是该国家的出口额（以美元计价）。</li>
+<li><code>total_exports</code> 是当年全球所有国家的出口总额（以美元计价）。</li>
+<li>结果乘以 100，将比例转换为百分比。</li>
+</ul>
 <p>这个指标表示某个国家在全球出口总额中所占的份额，用于衡量该国家在全球贸易中的相对重要性。</p>
 <p><code>export_share</code> 和 <code>cum_share</code> 的区别在于它们的计算方式和用途：</p>
 <ol type="1">
-<li><strong><code>export_share</code></strong>:
+<li><p><strong><code>export_share</code></strong>:</p>
 <ul>
 <li><p>表示某个国家在某一年中，其出口额占全球总出口额的百分比。</p></li>
 <li><p>是一个单独国家的指标，直接反映该国家在全球出口中的相对重要性。</p></li>
@@ -1307,7 +1332,7 @@ window.Quarto = {
 \mathrm{export\_share} = \frac{\mathrm{exports\_USD}}{\mathrm{total\_exports}} \times 100
 \]</span></p></li>
 </ul></li>
-<li><strong><code>cum_share</code></strong>:
+<li><p><strong><code>cum_share</code></strong>:</p>
 <ul>
 <li>表示某一年中，按国家排名累加的出口占比。</li>
 <li>是一个累计指标，反映从排名靠前的国家开始，逐步累加的出口占比。</li>
