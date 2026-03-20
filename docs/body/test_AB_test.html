@@ -575,24 +575,6 @@ window.Quarto = {
   <li><a href="#非参数检验mann-whitney-u-检验" id="toc-非参数检验mann-whitney-u-检验" class="nav-link" data-scroll-target="#非参数检验mann-whitney-u-检验"><span class="header-section-number">29.5.2</span> 非参数检验（Mann-Whitney U 检验）</a></li>
   <li><a href="#转化率比例的-z-检验" id="toc-转化率比例的-z-检验" class="nav-link" data-scroll-target="#转化率比例的-z-检验"><span class="header-section-number">29.5.3</span> 转化率/比例的 Z 检验</a></li>
   <li><a href="#显著性水平p-值" id="toc-显著性水平p-值" class="nav-link" data-scroll-target="#显著性水平p-值"><span class="header-section-number">29.5.4</span> 显著性水平、P 值</a></li>
-  <li><a href="#置信区间" id="toc-置信区间" class="nav-link" data-scroll-target="#置信区间"><span class="header-section-number">29.5.5</span> 置信区间</a></li>
-  </ul></li>
-  <li><a href="#样本量与实验效能" id="toc-样本量与实验效能" class="nav-link" data-scroll-target="#样本量与实验效能"><span class="header-section-number">29.6</span> 样本量与实验效能</a></li>
-  <li><a href="#python-实操咖啡店促销方案" id="toc-python-实操咖啡店促销方案" class="nav-link" data-scroll-target="#python-实操咖啡店促销方案"><span class="header-section-number">29.7</span> Python 实操：咖啡店促销方案</a>
-  <ul class="collapse">
-  <li><a href="#数据背景与问题回顾" id="toc-数据背景与问题回顾" class="nav-link" data-scroll-target="#数据背景与问题回顾"><span class="header-section-number">29.7.1</span> 数据背景与问题回顾</a></li>
-  <li><a href="#数据模拟与分组" id="toc-数据模拟与分组" class="nav-link" data-scroll-target="#数据模拟与分组"><span class="header-section-number">29.7.2</span> 数据模拟与分组</a></li>
-  <li><a href="#数据可视化与描述统计" id="toc-数据可视化与描述统计" class="nav-link" data-scroll-target="#数据可视化与描述统计"><span class="header-section-number">29.7.3</span> 数据可视化与描述统计</a></li>
-  <li><a href="#统计检验" id="toc-统计检验" class="nav-link" data-scroll-target="#统计检验"><span class="header-section-number">29.7.4</span> 统计检验</a></li>
-  <li><a href="#功效分析" id="toc-功效分析" class="nav-link" data-scroll-target="#功效分析"><span class="header-section-number">29.7.5</span> 功效分析</a></li>
-  <li><a href="#结果解读与业务建议" id="toc-结果解读与业务建议" class="nav-link" data-scroll-target="#结果解读与业务建议"><span class="header-section-number">29.7.6</span> 结果解读与业务建议</a></li>
-  </ul></li>
-  <li><a href="#非随机分组实验情境影响与对策" id="toc-非随机分组实验情境影响与对策" class="nav-link" data-scroll-target="#非随机分组实验情境影响与对策"><span class="header-section-number">29.8</span> 非随机分组实验：情境、影响与对策</a>
-  <ul class="collapse">
-  <li><a href="#典型情境" id="toc-典型情境" class="nav-link" data-scroll-target="#典型情境"><span class="header-section-number">29.8.1</span> 典型情境</a></li>
-  <li><a href="#影响分析" id="toc-影响分析" class="nav-link" data-scroll-target="#影响分析"><span class="header-section-number">29.8.2</span> 影响分析</a></li>
-  <li><a href="#应对与改进策略" id="toc-应对与改进策略" class="nav-link" data-scroll-target="#应对与改进策略"><span class="header-section-number">29.8.3</span> 应对与改进策略</a></li>
-  <li><a href="#小结" id="toc-小结" class="nav-link" data-scroll-target="#小结"><span class="header-section-number">29.8.4</span> 小结</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -810,7 +792,7 @@ p = \frac{n_A p_A + n_B p_B}{n_A + n_B}
 </ul>
 </section>
 <section id="显著性水平p-值" class="level3" data-number="29.5.4">
-<h3 data-number="29.5.4" class="anchored" data-anchor-id="显著性水平p-值"><span class="header-section-number">29.5.4</span> 显著性水平、P 值</h3>
+<h3 data-number="29.5.4" class="anchored"><span class="header-section-number">29.5.4</span> 显著性水平、P 值</h3>
 <ul>
 <li><p><strong>显著性水平（Significance Level, <span class="math inline">\(\alpha\)</span>）</strong></p>
 <ul>
@@ -821,10 +803,23 @@ p = \frac{n_A p_A + n_B p_B}{n_A + n_B}
 <ul>
 <li>从专业角度看，P 值表示：在原假设（比如短信提醒没有效果）成立的前提下，观察到当前结果或更极端结果的概率。如果 P 值很小（通常小于 0.05），说明在原假设为真的情况下，我们现在看到的数据几乎很难靠偶然性解释，这就为我们拒绝原假设提供了统计证据。</li>
 <li>通俗来讲，P 值越小，表示实验组和对照组之间出现如此大差异“纯属巧合”的可能性越低，因此我们更有理由相信新措施（如短信提醒）确实产生了效果。</li>
-<li>但要注意，P 值只是‘差异是否偶然’的统计证据，具体业务决策还要结合实际背景综合判断。**</li>
+<li>但要注意，P 值只是‘差异是否偶然’的统计证据，具体业务决策还要结合实际背景综合判断。</li>
 </ul></li>
 </ul>
-</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+检验方法的选择
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260320085858.png" width="700" alt="20260320085858"></p>
+<blockquote class="blockquote">
+<p>Source: Francesco Casalegno, 2021, Blog. A/B Testing – A complete guide to statistical testing. <a href="https://towardsdatascience.com/a-b-testing-a-complete-guide-to-statistical-testing-e3f1db140499/">Read</a>, <a href="https://github.com/FrancescoCasalegno/AB-Testing">github-Python codes</a></p>
+</blockquote>
 <section id="置信区间" class="level3" data-number="29.5.5">
 <h3 data-number="29.5.5" class="anchored" data-anchor-id="置信区间"><span class="header-section-number">29.5.5</span> 置信区间</h3>
 <p><strong>点估计与区间估计</strong></p>
@@ -840,7 +835,6 @@ p = \frac{n_A p_A + n_B p_B}{n_A + n_B}
 <p>我们平时所说的「95% 的覆盖率」，指的便是这种多次实验的总体结果。</p>
 <p><strong>单次置信区间的含义</strong></p>
 <p>在实际分析中，我们往往只进行<strong>一次实验</strong>，也只能计算出<strong>一个</strong>置信区间（如 <span class="math inline">\([2\%, 5\%]\)</span>）。对于这一次计算出的区间，<strong>真实参数要么在区间内，要么不在区间内</strong>。我们<strong>不能</strong>说“参数有 95% 的概率落在本次区间内” (这是一种非常普遍的错误理解)。我们只能说，<span class="math inline">\([2\%, 5\%]\)</span> 有「95% 的可靠性」或「95% 的覆盖率」。</p>
-</section>
 </section>
 <section id="样本量与实验效能" class="level2" data-number="29.6">
 <h2 data-number="29.6" class="anchored" data-anchor-id="样本量与实验效能"><span class="header-section-number">29.6</span> 样本量与实验效能</h2>
@@ -1098,20 +1092,28 @@ t 检验 P 值：0.0000</code></pre>
 <p>上述问题都是因果推断中的常见挑战，解决这些问题需要结合实验设计、统计方法和业务理解进行综合考虑。通过坚持随机分组原则、分层随机化、事后加权等方法，可以最大程度上提高实验结果的可靠性和解释力。</p>
 <p>对此有兴趣的读者可以参考以下资料：</p>
 <ul>
-<li>Alves, Matheus Facure. <strong>2022</strong>, <strong>Causal Inference for The Brave and True</strong>. <a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">Online Read</a>, <a href="https://github.com/matheusfacure/python-causality-handbook">-github-</a>
+<li><p>Alves, Matheus Facure. <strong>2022</strong>, <strong>Causal Inference for The Brave and True</strong>. <a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">Online Read</a>, <a href="https://github.com/matheusfacure/python-causality-handbook">-github-</a></p>
 <ul>
 <li>基本上覆盖了目前文献中使用多的多数因果推断方法，包括 IV, DID, SDID, PSM, Matching, Panel, SCM, RDD</li>
 <li>提供了完整的 Python 代码，可以 Fork <a href="https://github.com/matheusfacure/python-causality-handbook">-github-</a> 仓库，然后在本地运行 <strong>.ipynb</strong> 文档 (Jupyter Notebook)</li>
 <li>书中使用了 <code>causalml</code> 和 <code>dowhy</code> 两个包，前者是作者开发的一个包，后者是微软开发的一个包</li>
 </ul></li>
-<li>Cerulli, G. Econometric evaluation of socio-economic programs theory and applications. Springer, 2022.&nbsp;<a href="https://gitee.com/link?target=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-65945-8">-Link-</a>,&nbsp;<a href="https://gitee.com/link?target=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-3-662-65945-8%23toc">-Website-</a>&nbsp;(登陆学校图书馆账号可以下载 2e PDF),&nbsp;<a href="https://gitee.com/link?target=http%3A%2F%2Fndl.ethernet.edu.et%2Fbitstream%2F123456789%2F44389%2F1%2F242.pdf">PDF-1e</a>
+<li><p>Cerulli, G. Econometric evaluation of socio-economic programs theory and applications. Springer, 2022.&nbsp;<a href="https://gitee.com/link?target=https%3A%2F%2Fdoi.org%2F10.1007%2F978-3-662-65945-8">-Link-</a>,&nbsp;<a href="https://gitee.com/link?target=https%3A%2F%2Flink.springer.com%2Fbook%2F10.1007%2F978-3-662-65945-8%23toc">-Website-</a>&nbsp;(登陆学校图书馆账号可以下载 2e PDF),&nbsp;<a href="https://gitee.com/link?target=http%3A%2F%2Fndl.ethernet.edu.et%2Fbitstream%2F123456789%2F44389%2F1%2F242.pdf">PDF-1e</a></p>
 <ul>
 <li>共 6 章，介绍了反事实框架，回归调整法 (RA)，逆概率加权 (IPW)，匹配，多期 DID，合成控制法等。基本上涵盖了主流的因果推断方法。</li>
 </ul></li>
-<li>Chernozhukov, V. &amp; Hansen, C. &amp; Kallus, N. &amp; Spindler, M. &amp; Syrgkanis, V. (<strong>2024</strong>): Applied Causal Inference Powered by ML and AI. <a href="https://causalml-book.org/">CausalML-book.org</a>; arXiv:2403.02467. <a href="https://arxiv.org/pdf/2403.02467">-PDF-</a>，<a href="https://causalml-book.org/">Website</a>, <a href="https://github.com/CausalAIBook">github</a></li>
+<li><p>Chernozhukov, V. &amp; Hansen, C. &amp; Kallus, N. &amp; Spindler, M. &amp; Syrgkanis, V. (<strong>2024</strong>): Applied Causal Inference Powered by ML and AI. <a href="https://causalml-book.org/">CausalML-book.org</a>; arXiv:2403.02467. <a href="https://arxiv.org/pdf/2403.02467">-PDF-</a>，<a href="https://causalml-book.org/">Website</a>, <a href="https://github.com/CausalAIBook">github</a></p></li>
+<li><p>Laurin Brechter. <strong>2024</strong>, An Introduction to Bayesian A/B Testing. <a href="https://towardsdatascience.com/an-introduction-to-bayesian-a-b-testing-37bb62b0f871/">Read</a>, <a href="https://github.com/LaurinBrechter/BayesianInference/blob/main/hierarchical_switchpoint.ipynb">github-Python codes</a></p>
+<ul>
+<li>介绍了贝叶斯 A/B 测试的基本原理和方法，提供了完整的 Python 代码示例，适合对贝叶斯方法感兴趣的读者学习和实践。</li>
+</ul></li>
 </ul>
 
 
+</section>
+</section>
+</div>
+</div>
 </section>
 </section>
 

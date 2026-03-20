@@ -198,95 +198,31 @@ marp: true
 ```markdown
 ---
 marp: true
-size: 16:9        # 宽版：4:3
-paginate: true  
+theme: default
+size: 16:9
+paginate: true
+lang: zh-CN
+math: mathjax
+header: '[lianxh.cn](https://www.lianxh.cn/news/46917f1076104.html)'
 footer: '[lianxh.cn](https://www.lianxh.cn)&ensp;|&ensp;[Books](https://www.lianxh.cn/Books.html)'
+style: |
+  section {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 22px;
+    line-height: 1.45;
+    padding: 48px 56px 40px 56px;
+  }
+  h1 { color: #222; font-size: 34px; }
+  h2 { color: #1f7a1f; font-size: 30px; }
+  h3 { color: #1f4e79; font-size: 26px; }
+  pre { font-size: 20px; }
+  section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    font-size: 14px;
+  }
 ---
 
-<style>
-/*一级标题局中*/
-section.lead h1 {
-  text-align: center; /*其他参数：left, right*/
-}
-section {
-  font-size: 22px;      /* 正文字号 */
-}
-h1 {
-  color: blackyellow;   /* 标题的颜色 */
-  /*font-size: 28px; */ /* 标题的字号, 其它标题也可以这样修改 */
-}
-h2 {
-  color: green;
-}
-h3 {
-  color: darkblue;
-}
-h4 {
-  color: brown;
-}
-/* 右下角添加页码 */
-section::after {
-  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total); 
-}
-header,
-footer {
-  position: absolute;
-  left: 50px;
-  right: 50px;
-  height: 25px;
-}
-/* 调整图片与文本之间的间距 */
-section img {
-  margin-right: 10px;   /* 设置图片右侧的间距 */
-  margin-left: 10px;   /* 设置图片左侧的间距 */
-}
-
-/* 设置正文区域的边距，确保文本能更紧凑地放置 */
-section {
-  #padding-right: 20px;  /* 设置右侧边距 */
-  #padding-left: 20px;  /* 设置左侧边距 */
-}
-
-/* ====== 新增：设置代码块字号 ====== */
-
-/* 默认代码块字号 */
-pre {
-  font-size: 22px;
-}
-
-/* 可选类：小字号代码块 */
-.small-code pre {
-  font-size: 12px;
-}
-
-/* 可选类：大字号代码块 */
-.large-code pre {
-  font-size: 20px;
-}
-</style>
-
-<!--顶部文字-->
-[lianxh.cn](https://www.lianxh.cn/news/46917f1076104.html) 
-
-<br>
-
-<!--封面图片-->
-![bg right:50% w:400 brightness:. sepia:50%](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20220722114227.png) 
-
-<!--幻灯片标题-->
-
-### 连享会 · 2025 暑期班 · 高级班
-
-# B1. 动态面板门槛模型
-
-<br>
-<br>
-
-<!--作者信息-->
-[连玉君](https://www.lianxh.cn) (中山大学)
-arlionn@163.com
-
-<br>
+<!-- _headingDivider: 2 -->
 
 ---
 <!-- backgroundColor: #FFFFF9 -->
